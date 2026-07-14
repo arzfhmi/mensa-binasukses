@@ -117,9 +117,50 @@
         </div>
    
         </section>
-    </main>
+   <!-- FOOTER SECTION -->
+<footer id="contact" class="bg-indigo-950 text-white py-12 md:py-16">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+        <!-- Kolom 1 -->
+        <div>
+            <h3 class="text-xl md:text-2xl font-bold mb-4">PT Mensa Binasukses</h3>
+            <p class="text-indigo-200 text-xs md:text-sm leading-relaxed">
+                Mitra terpercaya dalam distribusi kesehatan nasional. Berkomitmen menghadirkan kualitas terbaik bagi seluruh masyarakat Indonesia.
+            </p>
+        </div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init();</script>
+        <!-- Kolom 2 -->
+        <div>
+            <h4 class="font-bold text-base md:text-lg mb-4 text-indigo-300">Kontak Kami</h4>
+            <ul class="space-y-3 text-indigo-100 text-xs md:text-sm">
+                <li><i class="fa-solid fa-location-dot mr-2"></i> Jakarta, Indonesia</li>
+                <li><i class="fa-solid fa-envelope mr-2"></i> info@mensa.co.id</li>
+                <li><i class="fa-solid fa-phone mr-2"></i> (021) 1234 5678</li>
+            </ul>
+        </div>
+
+        <!-- Kolom 3 -->
+        <div>
+            <h4 class="font-bold text-base md:text-lg mb-4 text-indigo-300">Ikuti Kami</h4>
+            <div class="flex gap-4">
+                <a href="#" class="w-10 h-10 rounded-full bg-indigo-800 flex items-center justify-center hover:bg-indigo-600 transition"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-indigo-800 flex items-center justify-center hover:bg-indigo-600 transition"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="max-w-7xl mx-auto px-4 mt-8 md:mt-12 pt-6 md:pt-8 border-t border-indigo-800 text-center text-indigo-400 text-[10px] md:text-sm">
+        © 2026 PT Mensa Binasukses. All Rights Reserved.
+    </div>
+</footer>
+
+<script>
+    AOS.init({ 
+        duration: 1000, 
+        once: false, 
+        offset: 50,
+        disable: 'mobile' // Opsional: Mematikan AOS di mobile agar performa lebih ringan
+    });
+</script>
 </body>
 </html>
