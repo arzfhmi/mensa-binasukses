@@ -5,86 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produk - Mensa Binasukses</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS Library CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-<body class="bg-gray-50">
-<body class="antialiased">
+<body class="bg-gray-50 antialiased relative overflow-x-hidden">
 
-    <nav class="max-w-7xl mx-auto mt-6 bg-white rounded-full px-8 py-4 flex items-center justify-between shadow-lg border border-gray-100 sticky top-4 z-50">
+    <!-- Background Decorative Blobs -->
+    <div class="fixed top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-indigo-200 rounded-full blur-3xl opacity-20 pointer-events-none"></div>
+    <div class="fixed bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-blue-200 rounded-full blur-3xl opacity-20 pointer-events-none"></div>
+
+    <!-- Navbar -->
+    <nav class="max-w-7xl mx-auto mt-6 bg-white/80 backdrop-blur-md rounded-full px-8 py-4 flex items-center justify-between shadow-lg border border-white/50 sticky top-4 z-50">
         <div class="flex items-center gap-2">
             <img src="https://i.imgur.com/4gdks1j.png" class="h-8 w-auto">
             <h1 class="font-bold text-lg text-gray-900">PT Mensa Binasukses</h1>
         </div>
         <div class="flex gap-8 font-semibold text-gray-700">
-            <a href="index.html" class="hover:text-indigo-700">Beranda</a>
-            <a href="tentang.html" class="text-indigo-700">Produk</a>
+            <a href="index.html" class="hover:text-indigo-700 transition">Beranda</a>
+            <a href="tentang.html" class="hover:text-indigo-700 transition">Tentang Kami</a>
+            <a href="produk.html" class="text-indigo-700">Produk</a>
         </div>
     </nav>
-<main class="max-w-7xl mx-auto px-4 py-16">
-        <h1 class="text-4xl font-extrabold text-gray-950 mb-8">Produk Kami</h1>
-        <p class="text-gray-600">Daftar produk dan layanan distribusi kesehatan PT Mensa Binasukses.</p>
-        
-        <!-- Area untuk daftar produk akan kita bangun di sini -->
-    <section id="produk" class="max-w-5xl mx-auto px-4 py-16">
-    <div class="text-center mb-16">
-        <h1 class="text-4xl font-extrabold text-gray-950 mb-4">Portfolio Kami</h1>
-        <p class="text-gray-600">Tiga divisi komersial utama dengan spesialisasi distribusi ke 35.000+ outlet nasional.</p>
-    </div>
 
-    <!-- Divisi List (Menyusun ke bawah) -->
-    <div class="space-y-16">
-        
-        <!-- Pharmaceutical -->
-        <div class="grid md:grid-cols-2 gap-8 items-start">
-            <div class="bg-gradient-to-br from-indigo-800 to-indigo-950 p-10 rounded-3xl text-white shadow-xl">
-                <h3 class="text-2xl font-bold mb-4">Pharmaceutical</h3>
-                <p class="text-indigo-200">Divisi distribusi produk farmasi jadi dan bahan baku dengan standar CDOB.</p>
-            </div>
-            <div>
-                <h4 class="font-bold text-xl mb-4">Pharmaceutical Products</h4>
-                <p class="text-gray-600 mb-4">Menyediakan layanan distribusi menyeluruh untuk produk farmasi jadi dan bahan baku farmasi melalui infrastruktur bersertifikasi GDP dengan fasilitas rantai dingin (Cold Chain), yang menjangkau rumah sakit, apotek, hingga berbagai institusi kesehatan di seluruh Indonesia.</p>
-                <!-- Principal List -->
-                <div class="flex flex-wrap gap-2">
-                    <span class="px-3 py-1 bg-gray-200 rounded-full text-xs font-semibold">OTTO</span>
-                    <span class="px-3 py-1 bg-gray-200 rounded-full text-xs font-semibold">Landson</span>
-                    <span class="px-3 py-1 bg-gray-200 rounded-full text-xs font-semibold">+ 6 lainnya</span>
+    <main class="max-w-5xl mx-auto px-4 py-16 relative z-10">
+        <div class="text-center mb-16">
+            <span class="text-indigo-600 font-bold tracking-widest uppercase text-xs">Portfolio Kami</span>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-950 mt-2 mb-4">Tiga Divisi Utama</h1>
+            <p class="text-gray-600 max-w-xl mx-auto">Tiga divisi komersial utama dengan spesialisasi distribusi ke 35.000+ outlet nasional.</p>
+        </div>
+
+        <div class="space-y-12">
+            <!-- Pharmaceutical -->
+            <div data-aos="fade-up" class="group bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 grid md:grid-cols-2 gap-8 items-center">
+                <div class="bg-gradient-to-br from-indigo-700 to-indigo-950 p-10 rounded-2xl text-white shadow-lg">
+                    <h3 class="text-2xl font-bold mb-2">Pharmaceutical</h3>
+                    <p class="text-indigo-200 text-sm">Standar CDOB & Cold Chain Terjamin.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-xl mb-4 text-gray-950">Pharmaceutical Products</h4>
+                    <p class="text-gray-600 mb-6 leading-relaxed text-sm">Menyediakan layanan distribusi menyeluruh untuk produk farmasi jadi dan bahan baku farmasi melalui infrastruktur bersertifikasi GDP dengan fasilitas rantai dingin (Cold Chain).</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-4 py-1 bg-gray-100 rounded-full text-xs font-semibold text-gray-700">OTTO</span>
+                        <span class="px-4 py-1 bg-gray-100 rounded-full text-xs font-semibold text-gray-700">Landson</span>
+                        <span class="px-4 py-1 bg-indigo-50 border border-indigo-200 rounded-full text-xs font-semibold text-indigo-700">+ 6 lainnya</span>
+                    </div>
                 </div>
             </div>
-        </div>
-         <!-- Medical Devices -->
-        <div class="grid md:grid-cols-2 gap-8 items-start">
-            <div class="bg-gradient-to-br from-indigo-800 to-indigo-950 p-10 rounded-3xl text-white shadow-xl">
-                <h3 class="text-2xl font-bold mb-4">Medical Devices</h3>
-                <p class="text-indigo-200">Divisi distribusi produk farmasi jadi dan bahan baku dengan standar CDOB.</p>
-            </div>
-            <div>
-                <h4 class="font-bold text-xl mb-4">Medical Devices & Diagnostics</h4>
-                <p class="text-gray-600 mb-4">Menghadirkan solusi distribusi alat kesehatan dan peralatan diagnostik dengan dukungan teknisi bersertifikat untuk layanan instalasi, pemeliharaan, dan purna jual yang profesional, menjangkau seluruh wilayah Indonesia.</p>
-                <!-- Principal List -->
-                <div class="flex flex-wrap gap-2">
-                    <span class="px-3 py-1 bg-gray-200 rounded-full text-xs font-semibold">3M</span>
-                    <span class="px-3 py-1 bg-gray-200 rounded-full text-xs font-semibold">Alcon</span>
-                    <span class="px-3 py-1 bg-gray-200 rounded-full text-xs font-semibold">+ 6 lainnya</span>
+
+            <!-- Medical Devices -->
+           <div data-aos="fade-up" data-aos-delay="100" class="group bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 grid md:grid-cols-2 gap-8 items-center">
+                <div class="bg-gradient-to-br from-blue-700 to-blue-950 p-10 rounded-2xl text-white shadow-lg">
+                    <h3 class="text-2xl font-bold mb-2">Medical Devices</h3>
+                    <p class="text-blue-200 text-sm">Solusi Teknis Bersertifikat.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-xl mb-4 text-gray-950">Medical Devices & Diagnostics</h4>
+                    <p class="text-gray-600 mb-6 leading-relaxed text-sm">Menghadirkan solusi distribusi alat kesehatan dan peralatan diagnostik dengan dukungan teknisi bersertifikat untuk layanan instalasi, pemeliharaan, dan purna jual.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-4 py-1 bg-gray-100 rounded-full text-xs font-semibold text-gray-700">3M</span>
+                        <span class="px-4 py-1 bg-gray-100 rounded-full text-xs font-semibold text-gray-700">Alcon</span>
+                        <span class="px-4 py-1 bg-blue-50 border border-blue-200 rounded-full text-xs font-semibold text-blue-700">+ 6 lainnya</span>
+                    </div>
                 </div>
             </div>
-        </div>
- <!-- Medical Devices -->
-        <div class="grid md:grid-cols-2 gap-8 items-start">
-            <div class="bg-gradient-to-br from-indigo-800 to-indigo-950 p-10 rounded-3xl text-white shadow-xl">
-                <h3 class="text-2xl font-bold mb-4">Consumer Goods</h3>
-                <p class="text-indigo-200">Divisi distribusi produk farmasi jadi dan bahan baku dengan standar CDOB.</p>
-            </div>
-            <div>
-                <h4 class="font-bold text-xl mb-4">Consumer Goods & OTC</h4>
-                <p class="text-gray-600 mb-4">Menyediakan layanan distribusi produk konsumen melalui berbagai saluran penjualan, mulai dari modern trade, e-commerce, apotek, toko kosmetik, toko perlengkapan bayi, hingga pasar tradisional, didukung jaringan distribusi yang menjangkau seluruh Indonesia.</p>
-                <!-- Principal List -->
-                <div class="flex flex-wrap gap-2">
-                    <span class="px-3 py-1 bg-gray-200 rounded-full text-xs font-semibold">Rohto</span>
-                    <span class="px-3 py-1 bg-gray-200 rounded-full text-xs font-semibold">Skintific</span>
-                    <span class="px-3 py-1 bg-gray-200 rounded-full text-xs font-semibold">+ 6 lainnya</span>
+
+            <!-- Consumer Goods -->
+            <div data-aos="fade-up" data-aos-delay="200" class="group bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 grid md:grid-cols-2 gap-8 items-center">
+                <div class="bg-gradient-to-br from-teal-700 to-teal-950 p-10 rounded-2xl text-white shadow-lg">
+                    <h3 class="text-2xl font-bold mb-2">Consumer Goods</h3>
+                    <p class="text-teal-200 text-sm">Jaringan Distribusi Terluas.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-xl mb-4 text-gray-950">Consumer Goods & OTC</h4>
+                    <p class="text-gray-600 mb-6 leading-relaxed text-sm">Menyediakan layanan distribusi produk konsumen melalui berbagai saluran penjualan, mulai dari modern trade, e-commerce, hingga pasar tradisional.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-4 py-1 bg-gray-100 rounded-full text-xs font-semibold text-gray-700">Rohto</span>
+                        <span class="px-4 py-1 bg-gray-100 rounded-full text-xs font-semibold text-gray-700">Skintific</span>
+                        <span class="px-4 py-1 bg-teal-50 border border-teal-200 rounded-full text-xs font-semibold text-teal-700">+ 6 lainnya</span>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
 
 </body>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100
+    });
+</script>
 </html>
