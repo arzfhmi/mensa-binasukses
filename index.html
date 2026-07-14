@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
-<head>
+<<head>
     <meta charset="UTF-8">
+    <!-- Tambahan 'maximum-scale=1' membantu mencegah zoom otomatis yang tidak diinginkan -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Mensa Binasukses - Official</title>
     
@@ -11,57 +12,68 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #F8F9FF; overflow-x: hidden; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #F8F9FF; 
+            overflow-x: hidden; /* Mencegah konten melebar ke samping yang bikin zoom */
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
     </style>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
-
 <body class="antialiased">
 
-    <!-- NAVBAR -->
-    <div class="relative w-full px-4 py-8">
-        <nav class="max-w-7xl mx-auto bg-white rounded-full px-4 md:px-8 py-3 flex items-center justify-between shadow-lg border border-gray-200 sticky top-4 z-50">
-            <!-- Logo & Nama -->
-            <div class="flex items-center gap-2">
-                <img src="https://i.imgur.com/4gdks1j.png" class="h-8 md:h-10 w-auto" alt="Logo PT Mensa Binasukses">
-                <h1 class="font-bold text-sm md:text-lg text-gray-900 leading-tight">PT Mensa Binasukses</h1>
-            </div>
+    <!-- HERO SECTION -->
+<div class="relative w-full px-4 py-8">
+    <nav class="max-w-7xl mx-auto bg-white rounded-full px-4 md:px-8 py-3 flex items-center justify-between shadow-lg border border-gray-200 mb-10 sticky top-4 z-50">
+        <!-- Logo & Nama -->
+        <div class="flex items-center gap-2">
+            <img src="https://i.imgur.com/4gdks1j.png" class="h-8 md:h-10 w-auto" alt="Logo PT Mensa Binasukses">
+            <h1 class="font-bold text-sm md:text-lg text-gray-900 leading-tight">PT Mensa Binasukses</h1>
+        </div>
 
-            <!-- MENU NAVIGASI -->
-            <div class="flex items-center gap-4 md:gap-8">
-                <a href="index.html" class="text-sm font-semibold text-gray-600 hover:text-indigo-600 transition">Beranda</a>
-                <a href="tentang.html" class="text-sm font-semibold text-gray-600 hover:text-indigo-600 transition">Tentang Kami</a>
-                <button class="hidden md:block bg-indigo-700 hover:bg-indigo-800 text-white px-6 py-2 rounded-full text-sm font-bold shadow-md transition-all">
-                    Hubungi Kami →
-                </button>
-            </div>
-        </nav>
-    </div>
+        <!-- Menu Desktop -->
+        <div class="hidden md:flex gap-10 text-base font-semibold text-gray-700">
+            <a href="#about" class="hover:text-indigo-700 transition-all">Tentang Kami</a>
+            <a href="#product" class="hover:text-indigo-700 transition-all">Produk</a>
+            <a href="#strength" class="hover:text-indigo-700 transition-all">Keunggulan</a>
+            <a href="#career" class="hover:text-indigo-700 transition-all">Karier</a>
+        </div>
+
+        <!-- Tombol -->
+        <button class="bg-indigo-700 hover:bg-indigo-800 text-white px-4 md:px-7 py-2 md:py-2.5 rounded-full text-xs md:text-base font-bold shadow-md transition-all">
+            Hubungi Kami →
+        </button>
+    </nav>
+</div>
 
     <!-- MAIN CONTENT -->
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center px-4 mt-8">
-        <div data-aos="fade-right" class="z-20">
-            <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-[10px] font-bold mb-4 inline-block">● Mitra Kesehatan Terpercaya</span>
-            
-            <h2 class="text-3xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight text-gray-900">
-                Solusi untuk <span class="text-indigo-600">Mengembangkan</span> Bisnis Anda
-            </h2>
-            
-            <p class="text-sm md:text-base text-gray-600 mb-6 md:mb-8 max-w-md">
-                Kami berkomitmen menyediakan produk farmasi, konsumen, dan alat kesehatan melalui seluruh cabang kami di Indonesia, dengan mematuhi standar Cara Distribusi Obat yang Baik (CDOB).
-            </p>
-
-            <div class="flex gap-3 md:gap-4">
-                <button class="bg-indigo-700 text-white px-5 md:px-8 py-3 rounded-xl font-bold text-xs md:text-sm">Hubungi Kami →</button>
-                <a href="tentang.html" class="bg-indigo-600 text-white px-5 md:px-8 py-3 rounded-xl font-bold text-xs md:text-sm transition-all hover:bg-indigo-700">
-                    Tonton Profil
-                </a>
-            </div>
-        </div>
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center px-4">
+    <div data-aos="fade-right" class="z-20">
+        <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-[10px] font-bold mb-4 inline-block">● Mitra Kesehatan Terpercaya</span>
         
-        <div data-aos="fade-left" class="relative">
-            <img src="https://i.imgur.com/E4IXfF2.png" class="w-full max-w-xs md:max-w-lg mx-auto relative object-contain" alt="Logistics Network">
+        <!-- Mengubah 5xl ke 3xl di mobile, agar tidak zoom -->
+        <h2 class="text-3xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight text-gray-900">
+            Solusi untuk <span class="text-indigo-600">Mengembangkan</span> Bisnis Anda
+        </h2>
+        
+        <p class="text-sm md:text-base text-gray-600 mb-6 md:mb-8 max-w-md">
+            Kami berkomitmen menyediakan produk farmasi, konsumen, dan alat kesehatan melalui seluruh cabang kami di Indonesia, dengan mematuhi standar Cara Distribusi Obat yang Baik (CDOB).
+        </p>
+
+        <div class="flex gap-3 md:gap-4">
+            <button class="bg-indigo-700 text-white px-5 md:px-8 py-3 rounded-xl font-bold text-xs md:text-sm">Hubungi Kami →</button>
+            <a href="#about" class="border border-indigo-700 text-indigo-700 px-5 md:px-8 py-3 rounded-xl font-bold text-xs md:text-sm">▶ Tonton Profil</a>
         </div>
     </div>
+    
+    <div data-aos="fade-left" class="relative">
+        <img src="https://i.imgur.com/E4IXfF2.png" class="w-full max-w-xs md:max-w-lg mx-auto relative object-contain" alt="Logistics Network">
+    </div>
+</div>
    <!-- STATS SECTION -->
 <div class="max-w-7xl mx-auto px-4 mt-8 pb-12 grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
     
