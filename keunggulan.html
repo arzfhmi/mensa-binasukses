@@ -93,7 +93,55 @@
 
     </div>
 </div>
+<!-- Section Peta & List Cabang -->
+<div class="py-16 px-6 max-w-7xl mx-auto" x-data="{ activeTab: 'Jawa' }">
+    
+    <!-- Peta -->
+    <div class="mb-8">
+        <img src="https://i.imgur.com/YOUR_MAP_IMAGE.png" alt="Peta Jaringan" class="w-full h-auto rounded-3xl shadow-lg">
+    </div>
 
+    <!-- Tab Navigation -->
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-2 mb-6">
+        <template x-for="region in ['Bali', 'Banten', 'Jawa', 'Kalimantan', 'Riau, 'Sulawesi', 'Sumatera']">
+            <button 
+                @click="activeTab = region" 
+                :class="activeTab === region ? 'bg-indigo-700 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'"
+                class="py-3 px-2 rounded-xl font-semibold transition text-sm">
+                <i class="fas fa-home mr-1"></i> <span x-text="region"></span>
+            </button>
+        </template>
+    </div>
+
+    <!-- Konten Dinamis (List Cabang) -->
+    <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+        <h3 class="text-2xl font-bold text-indigo-700 mb-4" x-text="'Cabang Wilayah ' + activeTab"></h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- Data untuk Jawa -->
+            <ul x-show="activeTab === 'Jawa'" class="space-y-2 text-gray-600">
+                <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Bekasi</li>
+                <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Bogor</li>
+                <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Bandung</li>
+                <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Depok</li>
+                <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Cirebon</li>
+                <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Purwokerto</li>
+                <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Malang</li>
+                <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Surabaya</li>
+                <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Yogyakarta</li>
+            </ul>
+            
+            <!-- Data Untuk Kalimantan -->
+            <ul x-show="activeTab === 'Kalimantan'" class="space-y-2 text-gray-600">
+                <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Banjarmasin</li>
+                <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Pontianak</li>
+                <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Samarinda</li>
+            </ul>
+            
+            <!-- Anda tinggal tambah <ul x-show="..."> lainnya di sini -->
+        </div>
+    </div>
+</div>
     <!-- Inisialisasi AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
