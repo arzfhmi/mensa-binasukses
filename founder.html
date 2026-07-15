@@ -4,9 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Founder - PT Mensa Binasukses</title>
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Alpine.js -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body class="bg-gray-50">
+
+    <!-- NAVIGASI YANG KONSISTEN -->
+    <nav class="max-w-7xl mx-auto mt-6 bg-white rounded-full px-6 py-3 flex items-center justify-between shadow-lg border border-gray-100 sticky top-4 z-[9999]">
+        <div class="flex items-center gap-2 shrink-0">
+            <img src="https://i.imgur.com/4gdks1j.png" class="h-8 w-auto">
+            <h1 class="font-bold text-lg text-gray-900 hidden md:block">PT Mensa Binasukses</h1>
+        </div>
+
+        <div class="flex items-center gap-4 lg:gap-6 font-semibold text-gray-700 text-sm lg:text-base">
+            <a href="index.html" class="hover:text-indigo-700 transition">Beranda</a>
+            <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
+                <span class="hover:text-indigo-700 cursor-pointer transition">Tentang Kami ▾</span>
+                <div x-show="open" x-cloak class="absolute top-full left-0 pt-2 w-48 z-[9999]">
+                    <div class="bg-white rounded-2xl shadow-xl border border-gray-100 py-2">
+                        <a href="tentang.html" class="block px-4 py-2 hover:bg-indigo-50">Profil</a>
+                        <a href="founder.html" class="block px-4 py-2 hover:bg-indigo-50">Founder</a>
+                        <a href="management.html" class="block px-4 py-2 hover:bg-indigo-50">Management</a>
+                    </div>
+                </div>
+            </div>
+            <a href="produk.html" class="hover:text-indigo-700 transition">Produk</a>
+            <a href="keunggulan.html" class="hover:text-indigo-700 transition">Keunggulan</a>
+            <a href="karier.html" class="hover:text-indigo-700 transition">Karier</a>
+        </div>
+
+        <div class="shrink-0">
+            <a href="kontak.html" class="bg-indigo-700 text-white px-5 py-2 rounded-full hover:bg-indigo-800 transition text-sm">Hubungi Kami →</a>
+        </div>
+    </nav>
+
+    <!-- KONTEN FOUNDER -->
+    <main class="max-w-7xl mx-auto mt-12 py-16 px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div class="sticky top-24">
+                <img src="URL_FOTO_FOUNDER_ANDA" alt="Founder PT Mensa Binasukses" class="w-full rounded-3xl shadow-2xl">
+            </div>
+            <div>
+                <h2 class="text-indigo-700 font-bold text-3xl mb-8">Founder Notes</h2>
+                <div class="text-gray-600 space-y-6 leading-relaxed">
+                    <p>Awal perjalanan Mensa Group dimulai pada April 1975, ketika PT Menjangan Sakti (Mensa) didirikan. Perusahaan yang awalnya hanya berkonsentrasi pada perdagangan bahan baku industri farmasi kemudian berekspansi menuju ranah industri kosmetik, pangan, dan pakan ternak beberapa tahun kemudian.</p>
+                    <p>Berkat ketekunan dan kerja keras, PT Menjangan Sakti mendapatkan sebuah kehormatan untuk dipercaya lembaga dunia, termasuk bekerja sama dengan beberapa rekanan/pemasok utama (principal) kelas dunia. Pertumbuhan stabil dari tahun ke tahun inilah yang memungkinkan perusahaan untuk melakukan perluasan dan diversifikasi bisnis.</p>
+                </div>
+                <div class="mt-10">
+                    <p class="text-gray-700 font-medium">Salam hangat,</p>
+                    <p class="text-indigo-900 font-bold text-lg mt-2">Sudharta</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
