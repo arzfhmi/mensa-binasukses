@@ -22,8 +22,8 @@
 
         <div class="flex items-center gap-4 lg:gap-6 font-semibold text-gray-700 text-sm lg:text-base">
             <a href="index.html" class="hover:text-indigo-700 transition">Beranda</a>
-            <div x-data="{ open: false }" @mouseleave="open = false" @click.away="open = false" class="relative">
-                <span class="hover:text-indigo-700 cursor-pointer transition">Tentang Kami ▾</span>
+            <div x-data="{ open: false }" @click.away="open = false" class="relative">
+                <span @click="open = !open" class="hover:text-indigo-700 cursor-pointer transition">Tentang Kami ▾</span>
                 <div x-show="open" x-cloak class="absolute top-full left-0 pt-2 w-48 z-[9999]">
                     <div class="bg-white rounded-2xl shadow-xl border border-gray-100 py-2">
                         <a href="tentang.html" @click="open = false" class="block px-4 py-2 hover:bg-indigo-50">Profil</a>
