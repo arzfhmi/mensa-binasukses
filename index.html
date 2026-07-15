@@ -46,15 +46,18 @@
        <!-- Dropdown Tentang Kami -->
 <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
     
-    <!-- Pemicu: Gunakan 'button' atau 'span' agar tidak otomatis pindah halaman saat diklik -->
-    <span class="hover:text-indigo-700 flex items-center gap-1 cursor-pointer">
+    <!-- Pemicu -->
+    <span class="hover:text-indigo-700 flex items-center gap-1 cursor-pointer py-4">
         Tentang Kami ▾
     </span>
     
     <!-- Menu Dropdown -->
     <div x-show="open" 
          x-cloak
-         class="absolute left-0 mt-2 w-48 z-50">
+         class="absolute left-0 w-48 z-50">
+        
+        <!-- JEMBATAN: Tambahkan div kosong setinggi 4px agar kursor tidak terputus -->
+        <div class="h-4"></div> 
         
         <div class="bg-white rounded-2xl shadow-xl border border-gray-100 py-2">
             <a href="tentang.html" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-700">Profil Perusahaan</a>
