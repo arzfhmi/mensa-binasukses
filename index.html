@@ -40,8 +40,8 @@
     </div>
 
     <!-- Menu Links -->
-    <div class="flex items-center gap-6 font-semibold text-gray-700 whitespace-nowrap">
-        <a href="index.html" class="hover:text-indigo-700 shrink-0">Beranda</a>
+    <div class="flex items-center gap-6 font-semibold text-gray-700 whitespace-nowrap flex-nowrap">
+        <a href="index.html" class="hover:text-indigo-700">Beranda</a>
 <!-- Dropdown Tentang Kami -->
         <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative shrink-0">
             <span class="hover:text-indigo-700 flex items-center gap-1 cursor-pointer">
@@ -73,12 +73,12 @@
     </div>
 </nav>
     
-   <!-- MAIN CONTENT -->
-<div class="max-w-7xl mx-auto px-8 mt-6">
-    <div class="inline-block bg-indigo-100 text-indigo-700 px-4 py-1 rounded-full text-sm font-medium">
-        • Mitra Kesehatan Terpercaya
-    </div>
-</div>
+    
+  <!-- MAIN CONTENT -->
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <!-- Teks Hero -->
+    <div data-aos="fade-right" class="z-20">
+        <span class="bg-indigo-100 text-indigo-700 px-4 py-1.5 rounded-full text-xs font-bold mb-6 inline-block">● Mitra Kesehatan Terpercaya</span>
         
         <!-- Mengubah 5xl ke 3xl di mobile, agar tidak zoom -->
         <h2 class="text-3xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight text-gray-900">
