@@ -42,20 +42,16 @@
     <div class="flex gap-8 font-semibold text-gray-700">
         <a href="index.html" class="hover:text-indigo-700">Beranda</a>
 
-       <!-- Dropdown Tentang Kami (Gunakan ini) -->
-<div x-data="{ open: false }" class="relative">
-    <!-- Tombol Menu: Menambahkan event listener di sini -->
-    <a href="tentang.html" 
-       @mouseenter="open = true" 
-       @mouseleave="open = false"
-       class="hover:text-indigo-700 flex items-center gap-1 cursor-pointer">
-        Tentang Kami ▾
-    </a>
+       <<!-- Dropdown Tentang Kami -->
+<div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
     
-    <!-- Menu Dropdown: Menambahkan event listener agar tetap terbuka saat kursor di atasnya -->
+    <!-- Pemicu: Gunakan 'button' atau 'span' agar tidak otomatis pindah halaman saat diklik -->
+    <span class="hover:text-indigo-700 flex items-center gap-1 cursor-pointer">
+        Tentang Kami ▾
+    </span>
+    
+    <!-- Menu Dropdown -->
     <div x-show="open" 
-         @mouseenter="open = true" 
-         @mouseleave="open = false"
          x-cloak
          class="absolute left-0 mt-2 w-48 z-50">
         
