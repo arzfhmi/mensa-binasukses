@@ -27,6 +27,7 @@
     [x-cloak] { display: none !important; }
 </style>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
     <!-- HERO SECTION -->
@@ -42,7 +43,7 @@
     <div class="flex gap-8 font-semibold text-gray-700">
         <a href="index.html" class="hover:text-indigo-700">Beranda</a>
 
-       <<!-- Dropdown Tentang Kami -->
+       <!-- Dropdown Tentang Kami -->
 <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
     
     <!-- Pemicu: Gunakan 'button' atau 'span' agar tidak otomatis pindah halaman saat diklik -->
