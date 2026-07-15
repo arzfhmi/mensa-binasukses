@@ -54,9 +54,7 @@
          class="absolute left-0 w-48 z-50">
         
         <!-- JEMBATAN: Tambahkan div kosong setinggi 4px agar kursor tidak terputus -->
-        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
-            <span class="hover:text-indigo-700 cursor-pointer">Tentang Kami ▾</span>
-            <div x-show="open" x-cloak class="absolute top-full left-0 pt-2 w-48 z-[9999]">
+        <div x-show="open" x-cloak class="absolute top-full left-0 pt-2 w-48 z-[9999]">
                 <div class="bg-white rounded-2xl shadow-xl border border-gray-100 py-2">
                     <a href="tentang.html" class="block px-4 py-2 hover:bg-indigo-50">Profil</a>
                     <a href="founder.html" class="block px-4 py-2 hover:bg-indigo-50">Founder</a>
@@ -73,6 +71,7 @@
     <div class="shrink-0">
         <a href="kontak.html" class="bg-indigo-700 text-white px-5 py-2 rounded-full hover:bg-indigo-800 transition text-sm">Hubungi Kami →</a>
     </div>
+</nav>
     
     
   <!-- MAIN CONTENT -->
