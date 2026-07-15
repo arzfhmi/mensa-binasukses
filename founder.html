@@ -52,43 +52,45 @@
 
     <!-- KONTEN FOUNDER -->
     <main class="max-w-7xl mx-auto mt-12 py-16 px-6">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <div class="sticky top-24">
-               <img src="https://i.imgur.com/DPPA6If.png" alt="Founder" class="w-full max-w-md mx-auto rounded-3xl shadow-xl object-cover">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <!-- Foto Utama (Muncul dari kiri) -->
+        <div class="sticky top-24" data-aos="fade-right">
+            <img src="https://i.imgur.com/DPPA6If.png" alt="Founder" class="w-full max-w-md mx-auto rounded-3xl shadow-xl object-cover">
+        </div>
+            <!-- Teks Founder Notes (Muncul dari kanan) -->
+        <div data-aos="fade-left">
+            <h2 class="text-indigo-700 font-bold text-3xl mb-8">Founder Notes</h2>
+            <div class="text-gray-600 space-y-6 leading-relaxed">
+                <p>Awal perjalanan Mensa Group dimulai pada April 1975, ketika PT Menjangan Sakti (Mensa) didirikan. Perusahaan yang awalnya hanya berkonsentrasi pada perdagangan bahan baku industri farmasi kemudian berekspansi menuju ranah industri kosmetik, pangan, dan pakan ternak beberapa tahun kemudian.</p>
+                <p>Berkat ketekunan dan kerja keras, PT Menjangan Sakti mendapatkan sebuah kehormatan untuk dipercaya lembaga dunia, termasuk bekerja sama dengan beberapa rekanan/pemasok utama (principal) kelas dunia. Pertumbuhan stabil dari tahun ke tahun inilah yang memungkinkan perusahaan untuk melakukan perluasan dan diversifikasi bisnis.</p>
             </div>
-            <div>
-                <h2 class="text-indigo-700 font-bold text-3xl mb-8">Founder Notes</h2>
-                <div class="text-gray-600 space-y-6 leading-relaxed">
-                    <p>Awal perjalanan Mensa Group dimulai pada April 1975, ketika PT Menjangan Sakti (Mensa) didirikan. Perusahaan yang awalnya hanya berkonsentrasi pada perdagangan bahan baku industri farmasi kemudian berekspansi menuju ranah industri kosmetik, pangan, dan pakan ternak beberapa tahun kemudian.</p>
-                    <p>Berkat ketekunan dan kerja keras, PT Menjangan Sakti mendapatkan sebuah kehormatan untuk dipercaya lembaga dunia, termasuk bekerja sama dengan beberapa rekanan/pemasok utama (principal) kelas dunia. Pertumbuhan stabil dari tahun ke tahun inilah yang memungkinkan perusahaan untuk melakukan perluasan dan diversifikasi bisnis.</p>
-                </div>
-                <div class="mt-10">
-                    <p class="text-gray-700 font-medium">Salam hangat,</p>
-                    <p class="text-indigo-900 font-bold text-lg mt-2">Sudharta</p>
-                </div>
+            <div class="mt-10">
+                <p class="text-gray-700 font-medium">Salam hangat,</p>
+                <p class="text-indigo-900 font-bold text-lg mt-2">Sudharta</p>
             </div>
         </div>
-        <!-- Section Tambahan: Heading & Foto -->
-        <section class="mt-20">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                <!-- Teks Heading -->
-                <div>
-                    <h2 class="text-indigo-700 font-bold text-3xl mb-4">Heading</h2>
-                    <p class="text-gray-600 leading-relaxed">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-                    </p>
-                </div>
+    </div>
+        <!-- Section Tambahan: Heading & Foto (Muncul dari bawah) -->
+    <section class="mt-20" data-aos="fade-up">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <!-- Teks Heading -->
+            <div>
+                <h2 class="text-indigo-700 font-bold text-3xl mb-4">Heading</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                </p>
+            </div>
                 <!-- Foto Individu -->
-                <div>
-                    <img src="URL_FOTO_INDIVIDU" alt="Portrait" class="w-full h-auto rounded-3xl shadow-xl">
-                </div>
+            <div>
+                <img src="URL_FOTO_INDIVIDU" alt="Portrait" class="w-full h-auto rounded-3xl shadow-xl">
             </div>
+        </div>
             <!-- Foto Bersama -->
-            <div class="mt-16">
-                <img src="URL_FOTO_BERSAMA" alt="Founder dan Penerus" class="w-full rounded-3xl shadow-2xl">
-            </div>
-        </section>
-    </main>
+        <div class="mt-16">
+            <img src="URL_FOTO_BERSAMA" alt="Founder dan Penerus" class="w-full rounded-3xl shadow-2xl">
+        </div>
+    </section>
+</main>
    <!-- FOOTER SECTION -->
 <footer class="bg-indigo-950 text-white py-12 px-6">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -130,12 +132,11 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ 
-            duration: 1000, 
-            once: false, 
-            offset: 50,
-            disable: 'mobile'
-        });
-    </script>
+    AOS.init({
+        duration: 1000,
+        once: false,
+        offset: 50
+    });
+</script>
 </body>
 </html>
