@@ -104,7 +104,7 @@
 
     <!-- Tombol Tab (Region) -->
     <div class="flex flex-wrap justify-center gap-2 mb-8">
-        <template x-for="region in ['Bali', 'Banten', 'Jawa', 'Kalimantan', 'Riau', 'Sulawesi', 'Sumatera']">
+        <template x-for="region in ['Bali', 'Banten', 'DKI Jakarta', 'Jawa', 'Kalimantan', 'Riau', 'Sulawesi', 'Sumatera']">
             <button 
                 @click="activeTab = region" 
                 :class="activeTab === region ? 'bg-indigo-700 text-white shadow-lg' : 'bg-white text-gray-700 border border-gray-200 hover:bg-indigo-50'"
@@ -121,6 +121,18 @@
         
         <!-- List Cabang -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
+
+            <!-- Data untuk Bali -->
+            <ul x-show="activeTab === 'Bali'" class="space-y-2 text-gray-600">
+                <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Denpasar</li>
+
+                <!-- Data untuk Banten -->
+            <ul x-show="activeTab === 'Banten'" class="space-y-2 text-gray-600">
+                <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Tangerang</li>
+
+                <!-- Data untuk DKI Jakarta -->
+            <ul x-show="activeTab === 'DKI Jakarta'" class="space-y-2 text-gray-600">
+                <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Jakarta Timur</li>
             
             <!-- Data untuk Jawa -->
             <ul x-show="activeTab === 'Jawa'" class="space-y-2 text-gray-600">
@@ -129,9 +141,12 @@
                 <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Bandung</li>
                 <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Depok</li>
                 <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Cirebon</li>
+                <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Jember</li
                 <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Purwokerto</li>
                 <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Malang</li>
                 <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Surabaya</li>
+                <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Solo</li>
+                <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Semarang</li>
                 <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Yogyakarta</li>
             </ul>
             
@@ -140,6 +155,28 @@
                 <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Banjarmasin</li>
                 <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Pontianak</li>
                 <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Samarinda</li>
+            </ul>
+
+             <!-- Data Untuk Riau -->
+            <ul x-show="activeTab === 'Riau'" class="space-y-2 text-gray-600">
+                <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Pekanbaru</li>
+                <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Batam</li>
+            </ul>
+
+            <!-- Data Untuk Sulawesi -->
+            <ul x-show="activeTab === 'Sulawesi'" class="space-y-2 text-gray-600">
+                <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Makassar</li>
+                <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Manado</li>
+            </ul>
+
+            <!-- Data untuk Sumatera -->
+            <ul x-show="activeTab === 'Sumatera'" class="space-y-2 text-gray-600">
+                <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Bandar Lampung</li>
+                <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Palembang</li>
+                <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Padang</li>
+                <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Jambi</li>
+                <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Medan</li>
+                <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Aceh</li>
             </ul>
             
             <!-- Anda tinggal tambah <ul x-show="..."> lainnya di sini -->
