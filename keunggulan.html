@@ -107,7 +107,7 @@
 
     <!-- Tombol Tab (Region) -->
     <div class="flex flex-wrap justify-center gap-2 mb-8">
-        <template x-for="region in ['Bali', 'Banten', 'Jawa', 'Kalimantan', 'Riau', 'Sulawesi', 'Sumatera']">
+        <template x-for="region in ['Bali', 'Banten', 'DKI Jakarta', 'Jawa', 'Kalimantan', 'Riau', 'Sulawesi', 'Sumatera']">
             <button 
                 @click="activeTab = region" 
                 :class="activeTab === region ? 'bg-indigo-700 text-white shadow-lg' : 'bg-white text-gray-700 border border-gray-200 hover:bg-indigo-50'"
