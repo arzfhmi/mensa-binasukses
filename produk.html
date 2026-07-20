@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Tentang Kami | PT Mensa Binasukses</title>
+    <title>Portfolio Produk | PT Mensa Binasukses</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>body { font-family: 'Inter', sans-serif; background-color: #F8F9FF; }</style>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #F8F9FF; }
+        [x-cloak] { display: none !important; }
+    </style>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
+    <body class="bg-gradient-to-b from-slate-50 via-indigo-50/20 to-slate-50 text-slate-800 min-h-screen relative overflow-x-hidden">
+
+    <!-- Efek Dekorasi Latar Belakang (Ambient Glow) agar tidak polos putih -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] bg-gradient-to-tr from-indigo-100/60 via-purple-50/30 to-transparent blur-3xl -z-10 pointer-events-none"></div>
 
      <!-- HERO SECTION -->
 <div class="relative w-full px-4 py-8">
-    <nav class="max-w-7xl mx-auto mt-6 bg-white rounded-full px-6 py-3 flex items-center justify-between shadow-lg border border-gray-100 sticky top-4 z-[9999]">
-    <!-- Logo -->
-    <div class="flex items-center gap-2 shrink-0">
-        <img src="https://i.imgur.com/4gdks1j.png" class="h-8 w-auto">
-        <h1 class="font-bold text-lg text-gray-900 hidden md:block">PT Mensa Binasukses</h1>
-    </div>
+        <nav class="max-w-7xl mx-auto mt-6 bg-white/90 backdrop-blur-md rounded-full px-6 py-3 flex items-center justify-between shadow-lg shadow-indigo-100/50 border border-gray-100 sticky top-4 z-[9999]">
+            <!-- Logo -->
+            <div class="flex items-center gap-2 shrink-0">
+                <img src="https://i.imgur.com/4gdks1j.png" class="h-8 w-auto">
+                <h1 class="font-bold text-lg text-gray-900 hidden md:block">PT Mensa Binasukses</h1>
+            </div>
 
     <!-- Menu Links -->
-    <div class="flex items-center gap-4 lg:gap-6 font-semibold text-gray-700 text-sm lg:text-base">
-        <a href="index.html" class="hover:text-indigo-700 transition">Beranda</a>
+            <div class="flex items-center gap-4 lg:gap-6 font-semibold text-gray-700 text-sm lg:text-base">
+                <a href="index.html" class="hover:text-indigo-700 transition">Beranda</a>
 
         <!-- Dropdown Tentang Kami -->
         <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
@@ -62,13 +68,15 @@
 </nav>
 
     <main class="max-w-5xl mx-auto px-4 py-16 relative z-10">
-        <div class="text-center mb-16">
-            <span class="text-indigo-600 font-bold tracking-widest uppercase text-xs">Portfolio Kami</span>
-            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-950 mt-2 mb-4">Tiga Divisi Utama</h1>
-            <p class="text-gray-600 max-w-xl mx-auto">Tiga divisi komersial utama dengan spesialisasi distribusi ke 35.000+ outlet nasional.</p>
-        </div>
+            <!-- Header Judul -->
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="inline-block py-1.5 px-4 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-600 font-bold tracking-widest uppercase text-xs mb-3 shadow-sm">Portfolio Kami</span>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-950 mt-2 mb-4 tracking-tight">Tiga Divisi Utama</h1>
+                <p class="text-gray-600 max-w-xl mx-auto text-base">Tiga divisi komersial utama dengan spesialisasi distribusi ke 35.000+ outlet nasional.</p>
+            </div>
 
-        <div class="space-y-12">
+            <!-- Container Card Produk -->
+            <div class="space-y-10">
             
             <!-- Pharmaceutical -->
             <div data-aos="fade-up" class="group bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 grid md:grid-cols-2 gap-8 items-center">
@@ -129,51 +137,50 @@
     </main>
     
  <!-- FOOTER SECTION -->
-<footer class="bg-indigo-950 text-white py-12 px-6">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer class="bg-indigo-950 text-white py-12 px-6 relative z-10">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="flex flex-col gap-3">
+                <img src="https://i.imgur.com/4gdks1j.png" alt="Logo" class="h-12 w-12 object-contain bg-white/10 p-2 rounded-xl">
+                <h3 class="text-xl font-bold">PT Mensa Binasukses</h3>
+                <p class="text-indigo-200 text-sm">
+                    Mitra terpercaya dalam distribusi kesehatan nasional. Berkomitmen menghadirkan kualitas terbaik bagi seluruh masyarakat Indonesia.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-lg mb-4">Kontak Kami</h4>
+                <div class="text-indigo-200 text-sm space-y-2">
+                    <p><i class="fas fa-map-marker-alt mr-2"></i> Jl. Pulo Kambing II No. 26, Kawasan Industri Pulogadung, Jakarta 13260</p>
+                    <p><i class="fas fa-envelope mr-2"></i> support@mbs.co.id</p>
+                    <p><i class="fas fa-phone-alt mr-2"></i> +62 21 460 1957</p>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-lg mb-4">Ikuti Kami</h4>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-indigo-900 border border-indigo-800 flex items-center justify-center hover:bg-indigo-700 transition">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-indigo-900 border border-indigo-800 flex items-center justify-center hover:bg-indigo-700 transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
         
-        <div class="flex flex-col gap-3">
-            <img src="https://i.imgur.com/4gdks1j.png" alt="Logo" class="h-12 w-12 object-contain">
-            <h3 class="text-xl font-bold">PT Mensa Binasukses</h3>
-            <p class="text-indigo-200 text-sm">
-                Mitra terpercaya dalam distribusi kesehatan nasional. Berkomitmen menghadirkan kualitas terbaik bagi seluruh masyarakat Indonesia.
-            </p>
+        <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-indigo-900 text-center text-indigo-400 text-xs">
+            <p>© 2026 PT Mensa Binasukses. All Rights Reserved.</p>
         </div>
-
-        <div>
-            <h4 class="font-bold text-lg mb-4">Kontak Kami</h4>
-            <div class="text-indigo-200 text-sm space-y-2">
-                <p><i class="fas fa-map-marker-alt mr-2"></i> Jl. Pulo Kambing II No. 26, Kawasan Industri Pulogadung, Jakarta 13260</p>
-                <p><i class="fas fa-envelope mr-2"></i> support@mbs.co.id</p>
-                <p><i class="fas fa-phone-alt mr-2"></i> +62 21 460 1957</p>
-            </div>
-        </div>
-
-        <div>
-            <h4 class="font-bold text-lg mb-4">Ikuti Kami</h4>
-            <div class="flex gap-4">
-                <a href="#" class="w-10 h-10 rounded-full bg-indigo-800 flex items-center justify-center hover:bg-indigo-700 transition">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="#" class="w-10 h-10 rounded-full bg-indigo-800 flex items-center justify-center hover:bg-indigo-700 transition">
-                    <i class="fab fa-instagram"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-indigo-800 text-center text-indigo-400 text-xs">
-        <p>© 2026 PT Mensa Binasukses. All Rights Reserved.</p>
-    </div>
-</footer>
+    </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-    AOS.init({
-        duration: 1000,
-        once: false,
-        offset: 50
-    });
-</script>
+        AOS.init({
+            duration: 1000,
+            once: false,
+            offset: 50
+        });
+    </script>
 </body>
 </html>
