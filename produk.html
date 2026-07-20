@@ -6,16 +6,24 @@
     <title>Portfolio Produk | PT Mensa Binasukses</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #F8F9FF; }
+        body { font-family: 'Inter', sans-serif; }
         [x-cloak] { display: none !important; }
+        /* Background Mesh Pattern Halus */
+        .bg-mesh {
+            background-color: #f8fafc;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.08) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(14, 165, 233, 0.08) 0px, transparent 50%),
+                radial-gradient(at 50% 50%, rgba(79, 70, 229, 0.05) 0px, transparent 50%);
+        }
     </style>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
-    <body class="bg-gradient-to-b from-slate-50 via-indigo-50/20 to-slate-50 text-slate-800 min-h-screen relative overflow-x-hidden">
-
+    <body class="bg-mesh text-slate-800 min-h-screen relative overflow-x-hidden">
+        
     <!-- Efek Dekorasi Latar Belakang (Ambient Glow) agar tidak polos putih -->
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] bg-gradient-to-tr from-indigo-100/60 via-purple-50/30 to-transparent blur-3xl -z-10 pointer-events-none"></div>
 
@@ -67,109 +75,125 @@
     </div>
 </nav>
 
-    <main class="max-w-5xl mx-auto px-4 py-16 relative z-10">
-            <!-- Header Judul -->
-            <div class="text-center mb-16" data-aos="fade-up">
-                <span class="inline-block py-1.5 px-4 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-600 font-bold tracking-widest uppercase text-xs mb-3 shadow-sm">Portfolio Kami</span>
-                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-950 mt-2 mb-4 tracking-tight">Tiga Divisi Utama</h1>
-                <p class="text-gray-600 max-w-xl mx-auto text-base">Tiga divisi komersial utama dengan spesialisasi distribusi ke 35.000+ outlet nasional.</p>
+    <main class="max-w-5xl mx-auto px-4 py-20 relative z-10">
+            <!-- Header Judul Lebih Hidup -->
+            <div class="text-center mb-20" data-aos="fade-up">
+                <div class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-indigo-50 border border-indigo-100/80 text-indigo-600 font-bold tracking-widest uppercase text-xs mb-4 shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-indigo-600 animate-pulse"></span>
+                    Portfolio Kami
+                </div>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-gray-950 mt-2 mb-6 tracking-tight leading-tight">
+                    Tiga Divisi Utama
+                </h1>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
+                    Tiga divisi komersial utama dengan spesialisasi distribusi ke <span class="text-indigo-600 font-semibold">35.000+ outlet nasional</span> berstandar tinggi.
+                </p>
             </div>
 
             <!-- Container Card Produk -->
-            <div class="space-y-10">
-            
-            <!-- Pharmaceutical -->
-            <div data-aos="fade-up" class="group bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 grid md:grid-cols-2 gap-8 items-center">
-                <!-- Bagian Kiri: Full Image -->
-    <div class="w-full rounded-2xl overflow-hidden shadow-inner aspect-[16/9]">
-        <img src="https://imgur.com/nRuZiPI.png" alt="Pharmaceutical" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-    </div>
-    <div>
-        <h4 class="font-bold text-2xl mb-4 text-gray-950">Pharmaceutical Products</h4>
-        <p class="text-gray-600 mb-6 leading-relaxed text-sm">
-            Menyediakan layanan distribusi menyeluruh untuk produk farmasi jadi dan bahan baku farmasi melalui infrastruktur bersertifikasi GDP dengan fasilitas rantai dingin (Cold Chain), yang menjangkau rumah sakit, apotek, hingga berbagai institusi kesehatan di seluruh Indonesia.
-        </p>    
-        <div class="flex flex-wrap gap-2">
-            <span class="px-4 py-1 bg-gray-100 rounded-full text-xs font-semibold text-gray-700">OTTO</span>
-            <span class="px-4 py-1 bg-gray-100 rounded-full text-xs font-semibold text-gray-700">Landson</span>
-            <span class="px-4 py-1 bg-indigo-50 border border-indigo-200 rounded-full text-xs font-semibold text-indigo-700">+ 6 lainnya</span>
-        </div>
-    </div>
-</div>
+            <div class="space-y-12">
+                
+                <!-- 1. Pharmaceutical Products -->
+                <div data-aos="fade-up" class="group relative bg-white p-8 md:p-10 rounded-[2.5rem] border border-slate-200/80 shadow-2xl shadow-slate-200/50 hover:shadow-indigo-500/10 hover:border-indigo-300 transition-all duration-500 grid md:grid-cols-2 gap-8 items-center">
+                    <div class="absolute -top-3 left-10 bg-indigo-600 text-white text-[10px] uppercase tracking-wider font-extrabold px-3.5 py-1 rounded-full shadow-md">
+                        Divisi 01
+                    </div>
+                    <div class="w-full rounded-2xl overflow-hidden shadow-inner aspect-[16/9] bg-slate-100 relative">
+                        <img src="https://imgur.com/nRuZiPI.png" alt="Pharmaceutical" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-2xl md:text-3xl mb-4 text-gray-950 group-hover:text-indigo-700 transition-colors">Pharmaceutical Products</h4>
+                        <p class="text-gray-600 mb-6 leading-relaxed text-sm md:text-base text-justify">
+                            Menyediakan layanan distribusi menyeluruh untuk produk farmasi jadi dan bahan baku farmasi melalui infrastruktur bersertifikasi GDP dengan fasilitas rantai dingin (Cold Chain), yang menjangkau rumah sakit, apotek, hingga berbagai institusi kesehatan di seluruh Indonesia.
+                        </p>    
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-4 py-1.5 bg-slate-100 rounded-full text-xs font-semibold text-slate-700">OTTO</span>
+                            <span class="px-4 py-1.5 bg-slate-100 rounded-full text-xs font-semibold text-slate-700">Landson</span>
+                            <span class="px-4 py-1.5 bg-indigo-50 border border-indigo-200 rounded-full text-xs font-semibold text-indigo-700">+ 6 lainnya</span>
+                        </div>
+                    </div>
+                </div>
 
-            <!-- Medical Devices -->
-<div data-aos="fade-up" data-aos-delay="100" class="group bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 grid md:grid-cols-2 gap-8 items-center">
-    <!-- Bagian Kiri: Full Image -->
-    <div class="w-full rounded-2xl overflow-hidden shadow-inner aspect-[16/9]">
-        <img src="https://imgur.com/lZis85v.png" alt="Medical Devices" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-    </div>
-    <div>
-        <h4 class="font-bold text-2xl mb-4 text-gray-950">Medical Devices & Diagnostics</h4>
-        <p class="text-gray-600 mb-6 leading-relaxed text-sm">
-            Menyediakan layanan distribusi alat kesehatan dan peralatan diagnostik secara profesional, didukung oleh teknisi bersertifikat untuk instalasi, pemeliharaan, dan layanan purna jual yang menjangkau seluruh Indonesia.
-        </p>
-        <div class="flex flex-wrap gap-2">
-            <span class="px-4 py-1 bg-gray-100 rounded-full text-xs font-semibold text-gray-700">3M</span>
-            <span class="px-4 py-1 bg-gray-100 rounded-full text-xs font-semibold text-gray-700">Alcon</span>
-            <span class="px-4 py-1 bg-blue-50 border border-blue-200 rounded-full text-xs font-semibold text-blue-700">+ 6 lainnya</span>
-        </div>
-    </div>
-</div>
+                <!-- 2. Medical Devices -->
+                <div data-aos="fade-up" data-aos-delay="100" class="group relative bg-white p-8 md:p-10 rounded-[2.5rem] border border-slate-200/80 shadow-2xl shadow-slate-200/50 hover:shadow-blue-500/10 hover:border-blue-300 transition-all duration-500 grid md:grid-cols-2 gap-8 items-center">
+                    <div class="absolute -top-3 left-10 bg-blue-600 text-white text-[10px] uppercase tracking-wider font-extrabold px-3.5 py-1 rounded-full shadow-md">
+                        Divisi 02
+                    </div>
+                    <div class="w-full rounded-2xl overflow-hidden shadow-inner aspect-[16/9] bg-slate-100 relative">
+                        <img src="https://imgur.com/lZis85v.png" alt="Medical Devices" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-2xl md:text-3xl mb-4 text-gray-950 group-hover:text-blue-700 transition-colors">Medical Devices & Diagnostics</h4>
+                        <p class="text-gray-600 mb-6 leading-relaxed text-sm md:text-base text-justify">
+                            Menyediakan layanan distribusi alat kesehatan dan peralatan diagnostik secara profesional, didukung oleh teknisi bersertifikat untuk instalasi, pemeliharaan, dan layanan purna jual yang menjangkau seluruh Indonesia.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-4 py-1.5 bg-slate-100 rounded-full text-xs font-semibold text-slate-700">3M</span>
+                            <span class="px-4 py-1.5 bg-slate-100 rounded-full text-xs font-semibold text-slate-700">Alcon</span>
+                            <span class="px-4 py-1.5 bg-blue-50 border border-blue-200 rounded-full text-xs font-semibold text-blue-700">+ 6 lainnya</span>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- Consumer Goods -->
-<div data-aos="fade-up" data-aos-delay="200" class="group bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 grid md:grid-cols-2 gap-8 items-center">
-    <!-- Bagian Kiri: Full Image (Link baru) -->
-    <div class="w-full rounded-2xl overflow-hidden shadow-inner aspect-[16/9]">
-        <img src="https://imgur.com/DV4U8bA.png" alt="Consumer Goods" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <!-- 3. Consumer Goods -->
+                <div data-aos="fade-up" data-aos-delay="200" class="group relative bg-white p-8 md:p-10 rounded-[2.5rem] border border-slate-200/80 shadow-2xl shadow-slate-200/50 hover:shadow-teal-500/10 hover:border-teal-300 transition-all duration-500 grid md:grid-cols-2 gap-8 items-center">
+                    <div class="absolute -top-3 left-10 bg-teal-600 text-white text-[10px] uppercase tracking-wider font-extrabold px-3.5 py-1 rounded-full shadow-md">
+                        Divisi 03
+                    </div>
+                    <div class="w-full rounded-2xl overflow-hidden shadow-inner aspect-[16/9] bg-slate-100 relative">
+                        <img src="https://imgur.com/DV4U8bA.png" alt="Consumer Goods" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-2xl md:text-3xl mb-4 text-gray-950 group-hover:text-teal-700 transition-colors">Consumer Goods & OTC</h4>
+                        <p class="text-gray-600 mb-6 leading-relaxed text-sm md:text-base text-justify">
+                            Menyediakan layanan distribusi produk konsumen melalui berbagai saluran penjualan, mulai dari modern trade, e-commerce, hingga pasar tradisional.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-4 py-1.5 bg-slate-100 rounded-full text-xs font-semibold text-slate-700">Rohto</span>
+                            <span class="px-4 py-1.5 bg-slate-100 rounded-full text-xs font-semibold text-slate-700">Skintific</span>
+                            <span class="px-4 py-1.5 bg-teal-50 border border-teal-200 rounded-full text-xs font-semibold text-teal-700">+ 6 lainnya</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
     </div>
-    <div>
-        <h4 class="font-bold text-2xl mb-4 text-gray-950">Consumer Goods & OTC</h4>
-        <p class="text-gray-600 mb-6 leading-relaxed text-sm">
-            Menyediakan layanan distribusi produk konsumen melalui berbagai saluran penjualan, mulai dari modern trade, e-commerce, hingga pasar tradisional.
-        </p>
-        <div class="flex flex-wrap gap-2">
-            <span class="px-4 py-1 bg-gray-100 rounded-full text-xs font-semibold text-gray-700">Rohto</span>
-            <span class="px-4 py-1 bg-gray-100 rounded-full text-xs font-semibold text-gray-700">Skintific</span>
-            <span class="px-4 py-1 bg-teal-50 border border-teal-200 rounded-full text-xs font-semibold text-teal-700">+ 6 lainnya</span>
-        </div>
-    </div>
-</div>
-    </main>
-    
- <!-- FOOTER SECTION -->
-    <footer class="bg-indigo-950 text-white py-12 px-6 relative z-10">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="flex flex-col gap-3">
-                <img src="https://i.imgur.com/4gdks1j.png" alt="Logo" class="h-12 w-12 object-contain bg-white/10 p-2 rounded-xl">
+     
+    <!-- FOOTER SECTION -->
+    <footer class="bg-indigo-950 text-white py-16 px-6 relative z-10 border-t border-indigo-900">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="flex flex-col gap-4">
+                <img src="https://i.imgur.com/4gdks1j.png" alt="Logo" class="h-12 w-12 object-contain bg-white/10 p-2.5 rounded-2xl">
                 <h3 class="text-xl font-bold">PT Mensa Binasukses</h3>
-                <p class="text-indigo-200 text-sm">
+                <p class="text-indigo-200 text-sm leading-relaxed">
                     Mitra terpercaya dalam distribusi kesehatan nasional. Berkomitmen menghadirkan kualitas terbaik bagi seluruh masyarakat Indonesia.
                 </p>
             </div>
 
             <div>
-                <h4 class="font-bold text-lg mb-4">Kontak Kami</h4>
-                <div class="text-indigo-200 text-sm space-y-2">
-                    <p><i class="fas fa-map-marker-alt mr-2"></i> Jl. Pulo Kambing II No. 26, Kawasan Industri Pulogadung, Jakarta 13260</p>
-                    <p><i class="fas fa-envelope mr-2"></i> support@mbs.co.id</p>
-                    <p><i class="fas fa-phone-alt mr-2"></i> +62 21 460 1957</p>
+                <h4 class="font-bold text-lg mb-4 text-indigo-100">Kontak Kami</h4>
+                <div class="text-indigo-200 text-sm space-y-3">
+                    <p class="flex items-start gap-2"><i class="fas fa-map-marker-alt mt-1 text-indigo-400"></i> Jl. Pulo Kambing II No. 26, Kawasan Industri Pulogadung, Jakarta 13260</p>
+                    <p class="flex items-center gap-2"><i class="fas fa-envelope text-indigo-400"></i> support@mbs.co.id</p>
+                    <p class="flex items-center gap-2"><i class="fas fa-phone-alt text-indigo-400"></i> +62 21 460 1957</p>
                 </div>
             </div>
 
             <div>
-                <h4 class="font-bold text-lg mb-4">Ikuti Kami</h4>
+                <h4 class="font-bold text-lg mb-4 text-indigo-100">Ikuti Kami</h4>
                 <div class="flex gap-4">
-                    <a href="#" class="w-10 h-10 rounded-full bg-indigo-900 border border-indigo-800 flex items-center justify-center hover:bg-indigo-700 transition">
-                        <i class="fab fa-linkedin-in"></i>
+                    <a href="#" class="w-11 h-11 rounded-2xl bg-indigo-900/80 border border-indigo-800 flex items-center justify-center hover:bg-indigo-600 transition shadow-inner">
+                        <i class="fab fa-linkedin-in text-lg"></i>
                     </a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-indigo-900 border border-indigo-800 flex items-center justify-center hover:bg-indigo-700 transition">
-                        <i class="fab fa-instagram"></i>
+                    <a href="#" class="w-11 h-11 rounded-2xl bg-indigo-900/80 border border-indigo-800 flex items-center justify-center hover:bg-indigo-600 transition shadow-inner">
+                        <i class="fab fa-instagram text-lg"></i>
                     </a>
                 </div>
             </div>
         </div>
         
-        <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-indigo-900 text-center text-indigo-400 text-xs">
+        <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-indigo-900/80 text-center text-indigo-400 text-xs">
             <p>© 2026 PT Mensa Binasukses. All Rights Reserved.</p>
         </div>
     </footer>
