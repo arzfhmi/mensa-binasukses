@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Karier | PT Mensa Binasukses</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        [x-cloak] { display: none !important; }
+        /* Background Mesh Pattern Halus */
+        .bg-mesh {
+            background-color: #f8fafc;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.08) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(14, 165, 233, 0.08) 0px, transparent 50%),
+                radial-gradient(at 50% 50%, rgba(79, 70, 229, 0.05) 0px, transparent 50%);
+        }
+    </style>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body class="bg-mesh text-slate-800 min-h-screen flex flex-col justify-between relative overflow-x-hidden">
+
+    <!-- HERO SECTION & NAVBAR ASLI (TIDAK DIUBAH) -->
+    <div class="relative w-full px-4 py-8">
+        <nav class="max-w-7xl mx-auto mt-6 bg-white/90 backdrop-blur-md rounded-full px-6 py-3 flex items-center justify-between shadow-lg shadow-indigo-100/50 border border-gray-100 sticky top-4 z-[9999]">
+            <!-- Logo -->
+            <div class="flex items-center gap-2 shrink-0">
+                <img src="https://i.imgur.com/4gdks1j.png" class="h-8 w-auto">
+                <h1 class="font-bold text-lg text-gray-900 hidden md:block">PT Mensa Binasukses</h1>
+            </div>
+
+            <!-- Menu Links -->
+            <div class="flex items-center gap-4 lg:gap-6 font-semibold text-gray-700 text-sm lg:text-base">
+                <a href="index.html" class="hover:text-indigo-700 transition">Beranda</a>
+
+                <!-- Dropdown Tentang Kami -->
+                <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
+                    <span class="hover:text-indigo-700 cursor-pointer transition">Tentang Kami ▾</span>
+                    <div x-show="open" x-cloak class="absolute top-full left-0 pt-2 w-48 z-[9999]">
+                        <div class="bg-white rounded-2xl shadow-xl border border-gray-100 py-2">
+                            <a href="tentang.html" class="block px-4 py-2 hover:bg-indigo-50 transition">Profil</a>
+                            <a href="founder.html" class="block px-4 py-2 hover:bg-indigo-50 transition">Founder</a>
+                            <a href="management.html" class="block px-4 py-2 hover:bg-indigo-50 transition">Management</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="produk.html" class="hover:text-indigo-700 transition">Produk</a>
+
+                <!-- Dropdown Keunggulan -->
+                <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
+                    <span class="hover:text-indigo-700 cursor-pointer transition">Keunggulan ▾</span>
+                    <div x-show="open" x-cloak class="absolute top-full left-0 pt-2 w-56 z-[9999]">
+                        <div class="bg-white rounded-2xl shadow-xl border border-gray-100 py-2">
+                            <a href="keunggulan.html#cabang" class="block px-4 py-2 hover:bg-indigo-50 transition">Cabang</a>
+                            <a href="keunggulan.html#sales" class="block px-4 py-2 hover:bg-indigo-50 transition">Sales</a>
+                            <a href="keunggulan.html#scm" class="block px-4 py-2 hover:bg-indigo-50 transition">SCM & Warehouse</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="karier.html" class="text-indigo-700 transition font-bold">Karier</a>
+            </div>
+
+            <!-- Hubungi Kami -->
+            <div class="shrink-0">
+                <a href="kontak.html" class="bg-indigo-700 text-white px-5 py-2 rounded-full hover:bg-indigo-800 transition text-sm shadow-md shadow-indigo-200">Hubungi Kami →</a>
+            </div>
+        </nav>
+
+        <!-- MAIN CONTENT: COMING SOON -->
+        <main class="max-w-3xl mx-auto px-4 py-28 text-center relative z-10" data-aos="fade-up">
+            <div class="bg-white p-10 md:p-14 rounded-[2.5rem] border border-slate-200/80 shadow-2xl shadow-slate-200/50 relative overflow-hidden">
+                <!-- Aksen Dekoratif -->
+                <div class="absolute -top-12 -right-12 w-40 h-40 bg-indigo-100/50 rounded-full blur-2xl pointer-events-none"></div>
+                <div class="absolute -bottom-12 -left-12 w-40 h-40 bg-blue-100/50 rounded-full blur-2xl pointer-events-none"></div>
+
+                <!-- Ikon / Badge -->
+                <div class="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-indigo-50 text-indigo-600 mb-8 shadow-inner border border-indigo-100">
+                    <i class="fas fa-briefcase text-3xl"></i>
+                </div>
+
+                <div class="inline-block py-1.5 px-4 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-600 font-bold tracking-widest uppercase text-xs mb-4 shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-indigo-600 inline-block mr-1 animate-pulse"></span> Segera Dibuka
+                </div>
+
+                <h1 class="text-3xl md:text-5xl font-extrabold text-gray-950 mb-6 tracking-tight">
+                    Peluang Karier Bersama Kami
+                </h1>
+
+                <p class="text-gray-600 text-base md:text-lg leading-relaxed mb-10 max-w-xl mx-auto text-justify md:text-center">
+                    Kami sedang mempersiapkan portal rekrutmen terbaik untuk Anda yang ingin bertumbuh bersama PT Mensa Binasukses. Pantau terus halaman ini untuk informasi lowongan pekerjaan terbaru.
+                </p>
+
+                <div class="flex flex-wrap items-center justify-center gap-4">
+                    <a href="index.html" class="bg-indigo-700 text-white font-semibold px-8 py-3.5 rounded-full hover:bg-indigo-800 transition shadow-lg shadow-indigo-200 text-sm">
+                        Kembali ke Beranda
+                    </a>
+                    <a href="kontak.html" class="bg-slate-100 text-slate-700 font-semibold px-8 py-3.5 rounded-full hover:bg-slate-200 transition text-sm border border-slate-200">
+                        Hubungi Tim HR
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+     
+    <!-- FOOTER SECTION -->
+    <footer class="bg-indigo-950 text-white py-16 px-6 relative z-10 border-t border-indigo-900 mt-12">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="flex flex-col gap-4">
+                <img src="https://i.imgur.com/4gdks1j.png" alt="Logo" class="h-12 w-12 object-contain bg-white/10 p-2.5 rounded-2xl">
+                <h3 class="text-xl font-bold">PT Mensa Binasukses</h3>
+                <p class="text-indigo-200 text-sm leading-relaxed">
+                    Mitra terpercaya dalam distribusi kesehatan nasional. Berkomitmen menghadirkan kualitas terbaik bagi seluruh masyarakat Indonesia.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-lg mb-4 text-indigo-100">Kontak Kami</h4>
+                <div class="text-indigo-200 text-sm space-y-3">
+                    <p class="flex items-start gap-2"><i class="fas fa-map-marker-alt mt-1 text-indigo-400"></i> Jl. Pulo Kambing II No. 26, Kawasan Industri Pulogadung, Jakarta 13260</p>
+                    <p class="flex items-center gap-2"><i class="fas fa-envelope text-indigo-400"></i> support@mbs.co.id</p>
+                    <p class="flex items-center gap-2"><i class="fas fa-phone-alt text-indigo-400"></i> +62 21 460 1957</p>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-lg mb-4 text-indigo-100">Ikuti Kami</h4>
+                <div class="flex gap-4">
+                    <a href="#" class="w-11 h-11 rounded-2xl bg-indigo-900/80 border border-indigo-800 flex items-center justify-center hover:bg-indigo-600 transition shadow-inner">
+                        <i class="fab fa-linkedin-in text-lg"></i>
+                    </a>
+                    <a href="#" class="w-11 h-11 rounded-2xl bg-indigo-900/80 border border-indigo-800 flex items-center justify-center hover:bg-indigo-600 transition shadow-inner">
+                        <i class="fab fa-instagram text-lg"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-indigo-900/80 text-center text-indigo-400 text-xs">
+            <p>© 2026 PT Mensa Binasukses. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: false,
+            offset: 50
+        });
+    </script>
+</body>
+</html>
