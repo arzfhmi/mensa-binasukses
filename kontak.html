@@ -198,43 +198,92 @@
     </div>
     
 <!-- FOOTER SECTION -->
-<footer id="kontak" class="bg-indigo-950 text-white py-16 px-6 relative z-10 border-t border-indigo-900">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+<footer class="bg-[#1c1945] text-slate-300 pt-16 pb-8 px-6 border-t border-indigo-950">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-indigo-900/50">
         
-        <div class="flex flex-col gap-3">
-            <img src="https://i.imgur.com/4gdks1j.png" alt="Logo" class="h-12 w-12 object-contain">
-            <h3 class="text-xl font-bold">PT Mensa Binasukses</h3>
-            <p class="text-indigo-200 text-sm">
+        <!-- Kolom 1 & 2: Logo & Deskripsi -->
+        <div class="lg:col-span-2 space-y-4">
+            <div class="flex items-center gap-3">
+                <div class="bg-white p-1.5 rounded-lg shadow-sm">
+                    <img src="https://i.imgur.com/4gdks1j.png" class="h-6 w-auto" alt="Logo Mensa Binasukses">
+                </div>
+                <span class="font-bold text-white text-lg tracking-wide">PT Mensa Binasukses</span>
+            </div>
+            <p class="text-slate-300 text-sm leading-relaxed max-w-sm">
                 Mitra terpercaya dalam distribusi kesehatan nasional. Berkomitmen menghadirkan kualitas terbaik bagi seluruh masyarakat Indonesia.
             </p>
         </div>
 
+        <!-- Kolom 3: Navigasi -->
         <div>
-            <h4 class="font-bold text-lg mb-4">Kontak Kami</h4>
-            <div class="text-indigo-200 text-sm space-y-2">
-                <p><i class="fas fa-map-marker-alt mr-2"></i> Jl. Pulo Kambing II No. 26, Kawasan Industri Pulogadung, Jakarta 13260</p>
-                <p><i class="fas fa-envelope mr-2"></i> support@mbs.co.id</p>
-                <p><i class="fas fa-phone-alt mr-2"></i> +62 21 460 1957</p>
+            <h4 class="font-bold text-white text-sm uppercase tracking-wider mb-4">Navigasi</h4>
+            <ul class="space-y-2.5 text-sm">
+                <li><a href="index.html" class="hover:text-white transition">Beranda</a></li>
+                <li><a href="tentang.html" class="hover:text-white transition">Tentang</a></li>
+                <li><a href="keunggulan.html" class="hover:text-white transition">Bisnis</a></li>
+                <li><a href="produk.html" class="hover:text-white transition">Produk</a></li>
+                <li><a href="keunggulan.html#cabang" class="hover:text-white transition">Jaringan</a></li>
+                <li><a href="kontak.html" class="hover:text-white transition">Kontak</a></li>
+            </ul>
+        </div>
+
+        <!-- Kolom 4: Divisi & Kontak -->
+        <div class="space-y-6">
+            <div>
+                <h4 class="font-bold text-white text-sm uppercase tracking-wider mb-4">Divisi</h4>
+                <ul class="space-y-2.5 text-sm">
+                    <li><a href="#" class="hover:text-white transition">Farmasi</a></li>
+                    <li><a href="#" class="hover:text-white transition">Consumer Goods</a></li>
+                    <li><a href="#" class="hover:text-white transition">Medical Device</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-white text-sm uppercase tracking-wider mb-4">Kontak Kami</h4>
+                <ul class="space-y-2.5 text-xs text-slate-300">
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-map-marker-alt text-indigo-400 mt-0.5 shrink-0"></i>
+                        <span>Jl. Pulo Kambing II No. 26, Kawasan Industri Pulogadung, Jakarta 13260</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-envelope text-indigo-400 shrink-0"></i>
+                        <span>support@mbs.co.id</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-phone text-indigo-400 shrink-0"></i>
+                        <span>+62 21 460 1957</span>
+                    </li>
+                </ul>
             </div>
         </div>
 
+        <!-- Kolom 5: Ikuti Kami (Media Sosial) -->
         <div>
-            <h4 class="font-bold text-lg mb-4">Ikuti Kami</h4>
-            <div class="flex gap-4">
-                <a href="#" class="w-10 h-10 rounded-full bg-indigo-800 flex items-center justify-center hover:bg-indigo-700 transition">
-                    <i class="fab fa-linkedin-in"></i>
+            <h4 class="font-bold text-white text-sm uppercase tracking-wider mb-4">Ikuti Kami</h4>
+            <div class="flex items-center gap-3">
+                <a href="#" class="w-10 h-10 rounded-xl bg-[#2b2668] border border-indigo-900/60 flex items-center justify-center text-white hover:bg-indigo-600 transition duration-300 shadow-sm">
+                    <i class="fab fa-linkedin-in text-sm"></i>
                 </a>
-                <a href="#" class="w-10 h-10 rounded-full bg-indigo-800 flex items-center justify-center hover:bg-indigo-700 transition">
-                    <i class="fab fa-instagram"></i>
+                <a href="#" class="w-10 h-10 rounded-xl bg-[#2b2668] border border-indigo-900/60 flex items-center justify-center text-white hover:bg-indigo-600 transition duration-300 shadow-sm">
+                    <i class="fab fa-instagram text-sm"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-xl bg-[#2b2668] border border-indigo-900/60 flex items-center justify-center text-white hover:bg-indigo-600 transition duration-300 shadow-sm">
+                    <i class="fab fa-facebook-f text-sm"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-xl bg-[#2b2668] border border-indigo-900/60 flex items-center justify-center text-white hover:bg-indigo-600 transition duration-300 shadow-sm">
+                    <i class="fab fa-youtube text-sm"></i>
                 </a>
             </div>
         </div>
+
     </div>
-    
-    <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-indigo-800 text-center text-indigo-400 text-xs">
-        <p>© 2026 PT Mensa Binasukses. All Rights Reserved.</p>
+
+    <!-- Copyright Bawah -->
+    <div class="max-w-7xl mx-auto pt-8 text-center text-xs text-indigo-300/80">
+        <p>&copy; 2026 PT Mensa Binasukses. All Rights Reserved.</p>
     </div>
 </footer>
+
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
