@@ -346,89 +346,107 @@
                 attribution: '&copy; OpenStreetMap contributors'
             }).addTo(map);
         </script>
-    <!-- SECTION: SCM & WAREHOUSE (BARU DITAMBAHKAN DI BAWAH CABANG) -->
-        <section id="scm" class="bg-white py-20 px-6 border-t border-slate-200/60" data-aos="fade-up">
+            
+    <!-- SECTION: SCM & WAREHOUSE (REDESIGNED DENGAN FOTO ANAK GUDANG & VISUAL MENARIK) -->
+        <section id="scm" class="bg-gradient-to-b from-white to-slate-100 py-24 px-6 border-t border-slate-200/60 relative overflow-hidden" data-aos="fade-up">
             <div class="max-w-7xl mx-auto">
                 <!-- Header SCM -->
-                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                    <span class="inline-block px-4 py-1.5 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 font-semibold text-xs uppercase tracking-widest">
+                <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+                    <span class="inline-block px-4 py-1.5 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 font-semibold text-xs uppercase tracking-widest shadow-sm">
                         Rantai Pasok & Manajemen Gudang
                     </span>
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
                         Supply Chain Management & Warehouse Modern
                     </h2>
-                    <p class="text-slate-600 text-sm md:text-base leading-relaxed">
-                        Didukung oleh sistem manajemen gudang terintegrasi dan standar Cara Distribusi Obat yang Baik (CDOB), kami memastikan setiap produk farmasi dan kesehatan disimpan serta didistribusikan dengan keamanan tingkat tinggi.
+                    <p class="text-slate-600 text-base md:text-lg leading-relaxed">
+                        Didukung oleh sistem manajemen gudang terintegrasi, teknologi digital, dan tim operasional profesional berstandar Cara Distribusi Obat yang Baik (CDOB).
                     </p>
                 </div>
 
-                <!-- Grid Fitur SCM -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-                    <!-- Fitur 1 -->
-                    <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200/60 hover:shadow-xl transition duration-300 flex flex-col justify-between">
-                        <div>
-                            <div class="w-12 h-12 bg-indigo-600 text-white rounded-2xl flex items-center justify-center text-lg mb-6 shadow-md">
+                <!-- Showcase Grid dengan Foto Anak Gudang & Highlight Visual -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20">
+                    <!-- Kolom Foto Aktivitas Gudang (Kiri - Lebar 6 Kolom) -->
+                    <div class="lg:col-span-6 relative">
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white group">
+                            <!-- Ganti URL gambar di bawah ini dengan foto anak gudang asli Anda -->
+                            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1000&auto=format&fit=crop" 
+                                 class="w-full h-[420px] object-cover group-hover:scale-105 transition duration-700" 
+                                 alt="Tim Gudang dan Operasional PT Mensa Binasukses">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#1c1945]/90 via-transparent to-transparent flex flex-col justify-end p-8 text-white">
+                                <span class="bg-indigo-600/90 text-white font-semibold text-xs px-3 py-1 rounded-full w-max mb-2">Tim Profesional & Handal</span>
+                                <h3 class="text-xl md:text-2xl font-bold">Siap Melayani Pengiriman ke Seluruh Pelosok Negeri</h3>
+                            </div>
+                        </div>
+                        <!-- Elemen dekoratif latar belakang -->
+                        <div class="absolute -bottom-6 -right-6 w-40 h-40 bg-indigo-500/10 rounded-full blur-2xl -z-10"></div>
+                    </div>
+
+                    <!-- Kolom Fitur Utama (Kanan - Lebar 6 Kolom) -->
+                    <div class="lg:col-span-6 space-y-6">
+                        <!-- Fitur 1 -->
+                        <div class="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-md hover:shadow-xl transition duration-300 flex items-start gap-5">
+                            <div class="w-12 h-12 bg-indigo-600 text-white rounded-2xl flex items-center justify-center text-lg shrink-0 shadow-md">
                                 <i class="fas fa-temperature-low"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-slate-900 mb-3">Cold Chain Management</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed">
-                                Fasilitas penyimpanan suhu terkontrol (cold storage & cool room) yang dipantau secara real-time untuk menjaga kualitas vaksin, insulin, dan produk termolabil lainnya.
-                            </p>
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900 mb-1">Cold Chain Management</h3>
+                                <p class="text-slate-600 text-sm leading-relaxed">
+                                    Fasilitas penyimpanan suhu terkontrol (cold storage & cool room) yang dipantau real-time untuk menjaga kualitas vaksin, insulin, dan produk termolabil.
+                                </p>
+                            </div>
                         </div>
-                        <ul class="space-y-2 text-xs font-medium text-slate-700 border-t border-slate-200/60 pt-4 mt-6">
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-indigo-600"></i> Suhu Terkontrol 2°C - 8°C & 15°C - 25°C</li>
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-indigo-600"></i> Validasi Rutin & Alarm Sistem Otomatis</li>
-                        </ul>
-                    </div>
 
-                    <!-- Fitur 2 -->
-                    <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200/60 hover:shadow-xl transition duration-300 flex flex-col justify-between">
-                        <div>
-                            <div class="w-12 h-12 bg-indigo-600 text-white rounded-2xl flex items-center justify-center text-lg mb-6 shadow-md">
+                        <!-- Fitur 2 -->
+                        <div class="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-md hover:shadow-xl transition duration-300 flex items-start gap-5">
+                            <div class="w-12 h-12 bg-indigo-600 text-white rounded-2xl flex items-center justify-center text-lg shrink-0 shadow-md">
                                 <i class="fas fa-boxes-stacked"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-slate-900 mb-3">WMS & Inventory Control</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed">
-                                Penerapan Warehouse Management System (WMS) berbasis digital untuk pelacakan batch produk, sistem FIFO/FEFO yang akurat, serta kecepatan pemenuhan pesanan (fulfillment).
-                            </p>
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900 mb-1">WMS & Inventory Control</h3>
+                                <p class="text-slate-600 text-sm leading-relaxed">
+                                    Penerapan Warehouse Management System (WMS) berbasis digital untuk pelacakan batch produk, sistem FIFO/FEFO yang akurat, serta kecepatan fulfillment.
+                                </p>
+                            </div>
                         </div>
-                        <ul class="space-y-2 text-xs font-medium text-slate-700 border-t border-slate-200/60 pt-4 mt-6">
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-indigo-600"></i> Sistem FIFO & FEFO Otomatis</li>
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-indigo-600"></i> Akurasi Stok Tinggi & Real-Time Data</li>
-                        </ul>
-                    </div>
 
-                    <!-- Fitur 3 -->
-                    <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200/60 hover:shadow-xl transition duration-300 flex flex-col justify-between">
-                        <div>
-                            <div class="w-12 h-12 bg-indigo-600 text-white rounded-2xl flex items-center justify-center text-lg mb-6 shadow-md">
+                        <!-- Fitur 3 -->
+                        <div class="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-md hover:shadow-xl transition duration-300 flex items-start gap-5">
+                            <div class="w-12 h-12 bg-indigo-600 text-white rounded-2xl flex items-center justify-center text-lg shrink-0 shadow-md">
                                 <i class="fas fa-shield-halved"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-slate-900 mb-3">Kepatuhan CDOB & BPOM</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed">
-                                Seluruh jaringan gudang dan operasional logistik telah tersertifikasi CDOB (Cara Distribusi Obat yang Baik) oleh Badan POM guna menjamin keaslian dan keamanan produk.
-                            </p>
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900 mb-1">Kepatuhan CDOB & BPOM</h3>
+                                <p class="text-slate-600 text-sm leading-relaxed">
+                                    Seluruh jaringan gudang dan operasional logistik telah tersertifikasi CDOB oleh Badan POM guna menjamin keaslian, keamanan, dan mutu produk.
+                                </p>
+                            </div>
                         </div>
-                        <ul class="space-y-2 text-xs font-medium text-slate-700 border-t border-slate-200/60 pt-4 mt-6">
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-indigo-600"></i> Standar Sertifikasi CDOB Resmi</li>
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-indigo-600"></i> Keamanan Ketat & Pengawasan Mutu</li>
-                        </ul>
                     </div>
                 </div>
 
                 <!-- Banner Informasi Tambahan SCM -->
-                <div class="bg-[#1c1945] text-white rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
-                    <div class="space-y-3 max-w-2xl">
-                        <span class="text-indigo-300 font-bold text-xs uppercase tracking-widest">Integritas Rantai Pasok</span>
-                        <h4 class="text-2xl md:text-3xl font-bold">Terintegrasi dari Gudang Hingga ke Tangan Konsumen</h4>
-                        <p class="text-indigo-200 text-sm leading-relaxed">
-                            Kami memastikan pengiriman tepat waktu dengan armada berstandar khusus obat dan alat kesehatan yang menjangkau seluruh pelosok wilayah Indonesia secara aman.
-                        </p>
+                <div class="relative bg-[#1c1945] text-white rounded-3xl p-10 md:p-14 overflow-hidden shadow-2xl">
+                    <div class="absolute inset-0 opacity-15 mix-blend-overlay">
+                        <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=1600&auto=format&fit=crop" class="w-full h-full object-cover" alt="Warehouse background">
                     </div>
-                    <div>
-                        <a href="kontak.html" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold px-6 py-3.5 rounded-2xl transition duration-300 text-sm inline-flex items-center gap-2 shadow-lg shrink-0">
-                            <i class="fas fa-paper-plane"></i> Konsultasi Logistik
-                        </a>
+                    
+                    <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
+                        <div class="space-y-3 max-w-2xl">
+                            <span class="px-3 py-1 rounded-full bg-indigo-500/30 text-indigo-200 text-xs font-semibold uppercase tracking-wider">
+                                Integritas Rantai Pasok
+                            </span>
+                            <h4 class="text-2xl md:text-3xl font-extrabold tracking-tight">
+                                Terintegrasi dari Gudang Hingga ke Tangan Konsumen
+                            </h4>
+                            <p class="text-indigo-200 text-sm md:text-base leading-relaxed">
+                                Kami memastikan pengiriman tepat waktu dengan armada berstandar khusus obat dan alat kesehatan yang menjangkau seluruh pelosok wilayah Indonesia secara aman.
+                            </p>
+                        </div>
+                        <div class="shrink-0">
+                            <a href="kontak.html" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold px-8 py-4 rounded-2xl transition duration-300 shadow-lg text-sm inline-flex items-center gap-2">
+                                <i class="fas fa-paper-plane"></i> Konsultasi Logistik
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
