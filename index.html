@@ -31,7 +31,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
-    <!-- NAVBAR SECTION (Universal, Font Presisi & Auto-Active Biru) -->
+    <!-- NAVBAR SECTION (Font Dikecilkan Sedikit & Auto-Active Biru) -->
 <div class="relative w-full px-4 py-6 bg-white border-b border-gray-100 z-[9999]">
     <nav class="max-w-[86rem] mx-auto bg-white rounded-full px-8 py-3.5 flex items-center justify-between shadow-sm border border-gray-100 sticky top-4 z-[9999]">
         <!-- Logo -->
@@ -40,8 +40,8 @@
             <h1 class="font-bold text-base lg:text-lg text-gray-900 hidden md:block tracking-tight">PT Mensa Binasukses</h1>
         </div>
 
-        <!-- Menu Links (Font & Gap disamakan persis dengan Training Center: font-medium text-sm lg:text-base gap-6 lg:gap-8) -->
-        <div class="hidden xl:flex items-center gap-6 lg:gap-8 font-medium text-sm lg:text-base text-gray-700">
+        <!-- Menu Links (Font dikecilkan sedikit menjadi text-xs lg:text-sm) -->
+        <div class="hidden xl:flex items-center gap-6 lg:gap-8 font-medium text-xs lg:text-sm text-gray-700">
             
             <a href="index.html" class="nav-link hover:text-indigo-700 transition" data-page="index.html">Beranda</a>
 
@@ -49,7 +49,7 @@
             <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
                 <a href="tentang.html" class="nav-link flex items-center gap-1 hover:text-indigo-700 transition" data-page="tentang.html">
                     <span>Tentang Kami</span>
-                    <span class="text-xs">▾</span>
+                    <span class="text-[10px]">▾</span>
                 </a>
                 <div x-show="open" x-cloak class="absolute top-full left-0 pt-2 w-48 z-[9999]">
                     <div class="bg-white rounded-2xl shadow-xl border border-gray-100 py-2 font-normal text-xs">
@@ -66,7 +66,7 @@
             <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
                 <a href="keunggulan.html" class="nav-link flex items-center gap-1 hover:text-indigo-700 transition" data-page="keunggulan.html">
                     <span>Bisnis & Layanan</span>
-                    <span class="text-xs">▾</span>
+                    <span class="text-[10px]">▾</span>
                 </a>
                 <div x-show="open" x-cloak class="absolute top-full left-0 pt-2 w-56 z-[9999]">
                     <div class="bg-white rounded-2xl shadow-xl border border-gray-100 py-2 font-normal text-xs">
@@ -84,12 +84,12 @@
 
         <!-- Tombol Hubungi Kami -->
         <div class="shrink-0">
-            <a href="kontak.html" class="bg-indigo-700 text-white px-6 py-2.5 rounded-full hover:bg-indigo-800 transition text-sm font-semibold shadow-md shadow-indigo-200">Hubungi Kami →</a>
+            <a href="kontak.html" class="bg-indigo-700 text-white px-6 py-2.5 rounded-full hover:bg-indigo-800 transition text-xs lg:text-sm font-semibold shadow-md shadow-indigo-200">Hubungi Kami →</a>
         </div>
     </nav>
 </div>
 
-<!-- Skrip Otomatis Pendeteksi Halaman Aktif (Supaya teks otomatis berubah biru sesuai halaman) -->
+<!-- Skrip Otomatis Pendeteksi Halaman Aktif -->
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const currentPath = window.location.pathname.split("/").pop() || "index.html";
