@@ -77,21 +77,30 @@
         </nav>
     </div>
 
-    <!-- HERO HEADER TRAINING CENTER (KONSISTEN DENGAN HALAMAN LAIN) -->
-    <section class="relative bg-[#1c1945] text-white py-20 px-6 overflow-hidden">
-        <!-- Background Overlay / Gambar Dekoratif Tipis -->
-        <div class="absolute inset-0 opacity-20 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1600&auto=format&fit=crop');"></div>
-        <div class="absolute inset-0 bg-gradient-to-b from-[#1c1945]/90 via-[#1c1945]/95 to-[#1c1945]"></div>
+    <!-- HERO HEADER TRAINING CENTER (DENGAN BACKGROUND POLA & EFEK CAHAYA) -->
+    <section class="relative bg-[#131035] text-white pt-24 pb-36 px-6 overflow-hidden">
+        <!-- 1. Background Gambar dengan Overlay & Blur Tipis -->
+        <div class="absolute inset-0 opacity-25 bg-cover bg-center mix-blend-overlay scale-105" style="background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1600&auto=format&fit=crop');"></div>
+        
+        <!-- 2. Efek Gradasi Cahaya (Glow & Vignette) -->
+        <div class="absolute inset-0 bg-gradient-to-tr from-[#1c1945] via-[#241e5e] to-[#131035] opacity-90"></div>
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-indigo-600/30 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl pointer-events-none"></div>
 
-        <div class="relative max-w-5xl mx-auto text-center space-y-6">
+        <!-- 3. Pola Grid / Titik-titik Dekoratif (Dots Pattern) -->
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#6366f1_1px,transparent_1px)] [background-size:16px_16px]"></div>
+
+        <!-- Konten Hero Header -->
+        <div class="relative max-w-5xl mx-auto text-center space-y-6 z-10">
             <!-- Badge Atas -->
-            <div class="inline-block bg-indigo-950/80 border border-indigo-800 text-indigo-300 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-widest">
+            <div class="inline-flex items-center gap-2 bg-indigo-900/60 border border-indigo-700/50 text-indigo-300 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-inner">
+                <span class="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
                 Pusat Pembelajaran Karyawan
             </div>
             
             <!-- Judul Utama -->
             <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">
-                Training Center <span class="text-indigo-300 font-serif italic">MBS</span>
+                Training Center MBS
             </h1>
 
             <!-- Deskripsi -->
@@ -101,19 +110,19 @@
 
             <!-- Kotak Info Statistik / Fitur Singkat di Bawah Banner -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 max-w-4xl mx-auto">
-                <div class="bg-indigo-950/60 border border-indigo-900/60 p-4 rounded-2xl backdrop-blur-sm text-center">
+                <div class="bg-indigo-950/70 border border-indigo-800/50 p-4 rounded-2xl backdrop-blur-md text-center shadow-lg hover:border-indigo-500 transition duration-300">
                     <div class="text-lg font-bold text-white">24/7</div>
                     <div class="text-[11px] text-slate-300 mt-0.5">Akses Pembelajaran</div>
                 </div>
-                <div class="bg-indigo-950/60 border border-indigo-900/60 p-4 rounded-2xl backdrop-blur-sm text-center">
+                <div class="bg-indigo-950/70 border border-indigo-800/50 p-4 rounded-2xl backdrop-blur-md text-center shadow-lg hover:border-indigo-500 transition duration-300">
                     <div class="text-lg font-bold text-white">Modul Lengkap</div>
                     <div class="text-[11px] text-slate-300 mt-0.5">SOP & Product Knowledge</div>
                 </div>
-                <div class="bg-indigo-950/60 border border-indigo-900/60 p-4 rounded-2xl backdrop-blur-sm text-center">
+                <div class="bg-indigo-950/70 border border-indigo-800/50 p-4 rounded-2xl backdrop-blur-md text-center shadow-lg hover:border-indigo-500 transition duration-300">
                     <div class="text-lg font-bold text-white">Nasional</div>
                     <div class="text-[11px] text-slate-300 mt-0.5">Seluruh Cabang MBS</div>
                 </div>
-                <div class="bg-indigo-950/60 border border-indigo-900/60 p-4 rounded-2xl backdrop-blur-sm text-center">
+                <div class="bg-indigo-950/70 border border-indigo-800/50 p-4 rounded-2xl backdrop-blur-md text-center shadow-lg hover:border-indigo-500 transition duration-300">
                     <div class="text-lg font-bold text-white">Link Eksternal</div>
                     <div class="text-[11px] text-slate-300 mt-0.5">Terintegrasi LMS</div>
                 </div>
@@ -122,8 +131,8 @@
     </section>
 
     <!-- KONTROL PENCARIAN & KATEGORI -->
-    <main class="max-w-7xl mx-auto px-6 -mt-8 mb-20 relative z-10" x-data="{ activeCategory: 'semua', search: '' }">
-        <div class="bg-white rounded-2xl shadow-xl p-4 lg:p-6 border border-gray-100 flex flex-col md:flex-row items-center justify-between gap-4">
+    <main class="max-w-7xl mx-auto px-6 -mt-10 mb-20 relative z-20" x-data="{ activeCategory: 'semua', search: '' }">
+        <div class="bg-white rounded-2xl shadow-2xl p-4 lg:p-6 border border-gray-100 flex flex-col md:flex-row items-center justify-between gap-4">
             
             <!-- Input Pencarian -->
             <div class="relative w-full md:w-80">
@@ -198,7 +207,7 @@
             </div>
         </div>
     </main>
-
+    
     <!-- FOOTER SECTION -->
     <footer class="bg-[#1c1945] text-slate-300 pt-16 pb-8 px-6 border-t border-indigo-950">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-indigo-900/50">
