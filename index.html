@@ -31,7 +31,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
-    <!-- NAVBAR SECTION (Model Kapsul Presisi) -->
+    <!-- NAVBAR SECTION (Ukuran Font & Jarak Presisi seperti Training Center) -->
 <div class="relative w-full px-4 py-6 bg-white border-b border-gray-100 z-[9999]">
     <nav class="max-w-[86rem] mx-auto bg-white rounded-full px-8 py-3.5 flex items-center justify-between shadow-sm border border-gray-100 sticky top-4 z-[9999]">
         <!-- Logo -->
@@ -40,15 +40,14 @@
             <h1 class="font-bold text-base lg:text-lg text-gray-900 hidden md:block tracking-tight">PT Mensa Binasukses</h1>
         </div>
 
-        <!-- Menu Links -->
+        <!-- Menu Links (Ukuran font text-sm lg:text-base & gap-6 lg:gap-8 persis Training Center) -->
         <div class="hidden xl:flex items-center gap-6 lg:gap-8 font-semibold text-gray-700 text-sm lg:text-base">
             
-            <!-- Menu Beranda (Ubah class ke text-indigo-700 jika sedang di halaman Beranda) -->
+            <!-- Beranda (Ubah class ke text-indigo-700 jika sedang di halaman Beranda) -->
             <a href="index.html" class="hover:text-indigo-700 transition">Beranda</a>
 
             <!-- Dropdown Tentang Kami -->
             <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
-                <!-- Ubah class text-indigo-700 jika sedang di halaman Tentang Kami / Sub-halamannya -->
                 <a href="tentang.html" class="flex items-center gap-1 hover:text-indigo-700 transition">
                     <span>Tentang Kami</span>
                     <span class="text-xs">▾</span>
@@ -62,12 +61,11 @@
                 </div>
             </div>
 
-            <!-- Menu Produk (Ubah class ke text-indigo-700 jika sedang di halaman Produk) -->
+            <!-- Produk (Ubah class ke text-indigo-700 jika sedang di halaman Produk) -->
             <a href="produk.html" class="hover:text-indigo-700 transition">Produk</a>
 
             <!-- Dropdown Bisnis & Layanan -->
             <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
-                <!-- Ubah class text-indigo-700 jika sedang di halaman Bisnis & Layanan -->
                 <a href="keunggulan.html" class="flex items-center gap-1 hover:text-indigo-700 transition">
                     <span>Bisnis & Layanan</span>
                     <span class="text-xs">▾</span>
@@ -81,8 +79,8 @@
                 </div>
             </div>
 
-            <!-- Training Center (Aktif Berwarna Biru) -->
-            <a href="training.html" class="text-indigo-700 transition">Training Center</a>
+            <!-- Training Center -->
+            <a href="training.html" class="hover:text-indigo-700 transition">Training Center</a>
 
             <!-- Kegiatan & Berita (Ubah class ke text-indigo-700 jika sedang di halaman Kegiatan) -->
             <a href="kegiatan.html" class="hover:text-indigo-700 transition">Kegiatan & Berita</a>
