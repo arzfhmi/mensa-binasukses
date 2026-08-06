@@ -31,7 +31,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
-    <!-- NAVBAR SECTION  -->
+    <!-- NAVBAR SECTION (Universal, Font Presisi & Auto-Active Biru) -->
 <div class="relative w-full px-4 py-6 bg-white border-b border-gray-100 z-[9999]">
     <nav class="max-w-[86rem] mx-auto bg-white rounded-full px-8 py-3.5 flex items-center justify-between shadow-sm border border-gray-100 sticky top-4 z-[9999]">
         <!-- Logo -->
@@ -40,53 +40,46 @@
             <h1 class="font-bold text-base lg:text-lg text-gray-900 hidden md:block tracking-tight">PT Mensa Binasukses</h1>
         </div>
 
-        <!-- Menu Links (Ukuran font text-sm lg:text-base & gap-6 lg:gap-8 persis Training Center) -->
-        <div class="hidden xl:flex items-center gap-6 lg:gap-8 font-semibold text-gray-700 text-sm lg:text-base">
+        <!-- Menu Links (Font & Gap disamakan persis dengan Training Center: font-medium text-sm lg:text-base gap-6 lg:gap-8) -->
+        <div class="hidden xl:flex items-center gap-6 lg:gap-8 font-medium text-sm lg:text-base text-gray-700">
             
-            <!-- Beranda (Ubah class ke text-indigo-700 jika sedang di halaman Beranda) -->
-            <a href="index.html" class="hover:text-indigo-700 transition">Beranda</a>
+            <a href="index.html" class="nav-link hover:text-indigo-700 transition" data-page="index.html">Beranda</a>
 
             <!-- Dropdown Tentang Kami -->
             <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
-                <a href="tentang.html" class="flex items-center gap-1 hover:text-indigo-700 transition">
+                <a href="tentang.html" class="nav-link flex items-center gap-1 hover:text-indigo-700 transition" data-page="tentang.html">
                     <span>Tentang Kami</span>
                     <span class="text-xs">▾</span>
                 </a>
                 <div x-show="open" x-cloak class="absolute top-full left-0 pt-2 w-48 z-[9999]">
-                    <div class="bg-white rounded-2xl shadow-xl border border-gray-100 py-2">
-                        <a href="tentang.html" class="block px-4 py-2 text-xs text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition">Profil</a>
-                        <a href="founder.html" class="block px-4 py-2 text-xs text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition">Founder</a>
-                        <a href="management.html" class="block px-4 py-2 text-xs text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition">Management</a>
+                    <div class="bg-white rounded-2xl shadow-xl border border-gray-100 py-2 font-normal text-xs">
+                        <a href="tentang.html" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition">Profil</a>
+                        <a href="founder.html" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition">Founder</a>
+                        <a href="management.html" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition">Management</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Produk (Ubah class ke text-indigo-700 jika sedang di halaman Produk) -->
-            <a href="produk.html" class="hover:text-indigo-700 transition">Produk</a>
+            <a href="produk.html" class="nav-link hover:text-indigo-700 transition" data-page="produk.html">Produk</a>
 
             <!-- Dropdown Bisnis & Layanan -->
             <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
-                <a href="keunggulan.html" class="flex items-center gap-1 hover:text-indigo-700 transition">
+                <a href="keunggulan.html" class="nav-link flex items-center gap-1 hover:text-indigo-700 transition" data-page="keunggulan.html">
                     <span>Bisnis & Layanan</span>
                     <span class="text-xs">▾</span>
                 </a>
                 <div x-show="open" x-cloak class="absolute top-full left-0 pt-2 w-56 z-[9999]">
-                    <div class="bg-white rounded-2xl shadow-xl border border-gray-100 py-2">
-                        <a href="keunggulan.html#sales" class="block px-4 py-2 text-xs text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition">Sales</a>
-                        <a href="keunggulan.html#cabang" class="block px-4 py-2 text-xs text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition">Cabang</a>
-                        <a href="keunggulan.html#scm" class="block px-4 py-2 text-xs text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition">SCM & Warehouse</a>
+                    <div class="bg-white rounded-2xl shadow-xl border border-gray-100 py-2 font-normal text-xs">
+                        <a href="keunggulan.html#sales" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition">Sales</a>
+                        <a href="keunggulan.html#cabang" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition">Cabang</a>
+                        <a href="keunggulan.html#scm" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition">SCM & Warehouse</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Training Center -->
-            <a href="training.html" class="hover:text-indigo-700 transition">Training Center</a>
-
-            <!-- Kegiatan & Berita (Ubah class ke text-indigo-700 jika sedang di halaman Kegiatan) -->
-            <a href="kegiatan.html" class="hover:text-indigo-700 transition">Kegiatan & Berita</a>
-
-            <!-- Karier (Ubah class ke text-indigo-700 jika sedang di halaman Karier) -->
-            <a href="karier.html" class="hover:text-indigo-700 transition">Karier</a>
+            <a href="training.html" class="nav-link hover:text-indigo-700 transition" data-page="training.html">Training Center</a>
+            <a href="kegiatan.html" class="nav-link hover:text-indigo-700 transition" data-page="kegiatan.html">Kegiatan & Berita</a>
+            <a href="karier.html" class="nav-link hover:text-indigo-700 transition" data-page="karier.html">Karier</a>
         </div>
 
         <!-- Tombol Hubungi Kami -->
@@ -95,6 +88,18 @@
         </div>
     </nav>
 </div>
+
+<!-- Skrip Otomatis Pendeteksi Halaman Aktif (Supaya teks otomatis berubah biru sesuai halaman) -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const currentPath = window.location.pathname.split("/").pop() || "index.html";
+        document.querySelectorAll(".nav-link").forEach(link => {
+            if (link.getAttribute("data-page") === currentPath) {
+                link.classList.add("text-indigo-700", "font-semibold");
+            }
+        });
+    });
+</script>
     
   <!-- MAIN CONTENT -->
 <div class="max-w-7xl mx-auto mt-8 md:mt-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
