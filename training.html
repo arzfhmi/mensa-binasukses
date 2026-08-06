@@ -16,8 +16,8 @@
 <body class="bg-gray-50 text-gray-800 font-sans antialiased">
 
     <!-- NAVBAR SECTION -->
-    <div class="relative w-full px-4 py-8">
-        <nav class="max-w-[86rem] mx-auto mt-6 bg-white rounded-full px-8 py-3.5 flex items-center justify-between shadow-lg border border-gray-100 sticky top-4 z-[9999]">
+    <div class="relative w-full px-4 py-6 bg-white border-b border-gray-100">
+        <nav class="max-w-[86rem] mx-auto bg-white rounded-full px-8 py-3.5 flex items-center justify-between shadow-sm border border-gray-100 sticky top-4 z-[9999]">
             <!-- Logo -->
             <div class="flex items-center gap-3 shrink-0">
                 <img src="https://i.imgur.com/4gdks1j.png" class="h-9 w-auto">
@@ -77,24 +77,52 @@
         </nav>
     </div>
 
-    <!-- HERO HEADER TRAINING CENTER -->
-    <header class="bg-[#0b192c] text-white pt-12 pb-20 px-6 lg:px-16 mt-[-30px]">
-        <div class="max-w-7xl mx-auto space-y-4">
-            <div class="flex items-center gap-2 text-indigo-300 text-xs tracking-widest uppercase font-semibold">
-                <span class="w-8 h-[2px] bg-indigo-400"></span>
-                Training Center
-            </div>
-            <h1 class="text-4xl lg:text-5xl font-extrabold tracking-tight">
-                Pusat Pelatihan <span class="text-indigo-300 font-serif italic">MBS</span>
-            </h1>
-            <p class="text-gray-300 text-sm lg:text-base max-w-2xl leading-relaxed">
-                Video pembelajaran untuk karyawan MBS di seluruh Indonesia — akses dari mana saja, kapan saja.
-            </p>
-        </div>
-    </header>
+    <!-- HERO HEADER TRAINING CENTER (KONSISTEN DENGAN HALAMAN LAIN) -->
+    <section class="relative bg-[#1c1945] text-white py-20 px-6 overflow-hidden">
+        <!-- Background Overlay / Gambar Dekoratif Tipis -->
+        <div class="absolute inset-0 opacity-20 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1600&auto=format&fit=crop');"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-[#1c1945]/90 via-[#1c1945]/95 to-[#1c1945]"></div>
 
-    <!-- KONTROL PENCARIAN & KATEGORI (INTERAKTIF DENGAN ALPINE.JS) -->
-    <main class="max-w-7xl mx-auto px-6 -mt-8 mb-20" x-data="{ activeCategory: 'semua', search: '' }">
+        <div class="relative max-w-5xl mx-auto text-center space-y-6">
+            <!-- Badge Atas -->
+            <div class="inline-block bg-indigo-950/80 border border-indigo-800 text-indigo-300 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-widest">
+                Pusat Pembelajaran Karyawan
+            </div>
+            
+            <!-- Judul Utama -->
+            <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">
+                Training Center <span class="text-indigo-300 font-serif italic">MBS</span>
+            </h1>
+
+            <!-- Deskripsi -->
+            <p class="text-slate-300 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+                Akses modul pelatihan, product knowledge, dan standar operasional digital terintegrasi untuk seluruh tim di Indonesia.
+            </p>
+
+            <!-- Kotak Info Statistik / Fitur Singkat di Bawah Banner -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 max-w-4xl mx-auto">
+                <div class="bg-indigo-950/60 border border-indigo-900/60 p-4 rounded-2xl backdrop-blur-sm text-center">
+                    <div class="text-lg font-bold text-white">24/7</div>
+                    <div class="text-[11px] text-slate-300 mt-0.5">Akses Pembelajaran</div>
+                </div>
+                <div class="bg-indigo-950/60 border border-indigo-900/60 p-4 rounded-2xl backdrop-blur-sm text-center">
+                    <div class="text-lg font-bold text-white">Modul Lengkap</div>
+                    <div class="text-[11px] text-slate-300 mt-0.5">SOP & Product Knowledge</div>
+                </div>
+                <div class="bg-indigo-950/60 border border-indigo-900/60 p-4 rounded-2xl backdrop-blur-sm text-center">
+                    <div class="text-lg font-bold text-white">Nasional</div>
+                    <div class="text-[11px] text-slate-300 mt-0.5">Seluruh Cabang MBS</div>
+                </div>
+                <div class="bg-indigo-950/60 border border-indigo-900/60 p-4 rounded-2xl backdrop-blur-sm text-center">
+                    <div class="text-lg font-bold text-white">Link Eksternal</div>
+                    <div class="text-[11px] text-slate-300 mt-0.5">Terintegrasi LMS</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KONTROL PENCARIAN & KATEGORI -->
+    <main class="max-w-7xl mx-auto px-6 -mt-8 mb-20 relative z-10" x-data="{ activeCategory: 'semua', search: '' }">
         <div class="bg-white rounded-2xl shadow-xl p-4 lg:p-6 border border-gray-100 flex flex-col md:flex-row items-center justify-between gap-4">
             
             <!-- Input Pencarian -->
@@ -107,12 +135,12 @@
 
             <!-- Tombol Filter Kategori -->
             <div class="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-none">
-                <button @click="activeCategory = 'semua'" :class="activeCategory === 'semua' ? 'bg-[#0b192c] text-white shadow-md' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'" class="px-4 py-2 rounded-full text-xs font-semibold transition shrink-0">Semua</button>
-                <button @click="activeCategory = 'product'" :class="activeCategory === 'product' ? 'bg-[#0b192c] text-white shadow-md' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'" class="px-4 py-2 rounded-full text-xs font-semibold transition shrink-0">Product Knowledge</button>
-                <button @click="activeCategory = 'coldchain'" :class="activeCategory === 'coldchain' ? 'bg-[#0b192c] text-white shadow-md' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'" class="px-4 py-2 rounded-full text-xs font-semibold transition shrink-0">Cold Chain</button>
-                <button @click="activeCategory = 'sales'" :class="activeCategory === 'sales' ? 'bg-[#0b192c] text-white shadow-md' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'" class="px-4 py-2 rounded-full text-xs font-semibold transition shrink-0">Sales & Marketing</button>
-                <button @click="activeCategory = 'compliance'" :class="activeCategory === 'compliance' ? 'bg-[#0b192c] text-white shadow-md' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'" class="px-4 py-2 rounded-full text-xs font-semibold transition shrink-0">Compliance</button>
-                <button @click="activeCategory = 'sop'" :class="activeCategory === 'sop' ? 'bg-[#0b192c] text-white shadow-md' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'" class="px-4 py-2 rounded-full text-xs font-semibold transition shrink-0">SOP Operasional</button>
+                <button @click="activeCategory = 'semua'" :class="activeCategory === 'semua' ? 'bg-[#1c1945] text-white shadow-md' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'" class="px-4 py-2 rounded-full text-xs font-semibold transition shrink-0">Semua</button>
+                <button @click="activeCategory = 'product'" :class="activeCategory === 'product' ? 'bg-[#1c1945] text-white shadow-md' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'" class="px-4 py-2 rounded-full text-xs font-semibold transition shrink-0">Product Knowledge</button>
+                <button @click="activeCategory = 'coldchain'" :class="activeCategory === 'coldchain' ? 'bg-[#1c1945] text-white shadow-md' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'" class="px-4 py-2 rounded-full text-xs font-semibold transition shrink-0">Cold Chain</button>
+                <button @click="activeCategory = 'sales'" :class="activeCategory === 'sales' ? 'bg-[#1c1945] text-white shadow-md' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'" class="px-4 py-2 rounded-full text-xs font-semibold transition shrink-0">Sales & Marketing</button>
+                <button @click="activeCategory = 'compliance'" :class="activeCategory === 'compliance' ? 'bg-[#1c1945] text-white shadow-md' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'" class="px-4 py-2 rounded-full text-xs font-semibold transition shrink-0">Compliance</button>
+                <button @click="activeCategory = 'sop'" :class="activeCategory === 'sop' ? 'bg-[#1c1945] text-white shadow-md' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'" class="px-4 py-2 rounded-full text-xs font-semibold transition shrink-0">SOP Operasional</button>
             </div>
         </div>
 
