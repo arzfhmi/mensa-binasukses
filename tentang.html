@@ -67,39 +67,46 @@
 
         
     <main class="py-12">
-        <!-- About Section (Revised with Mesh & Dot Pattern) -->
-<section id="about" data-aos="fade-up" class="max-w-7xl mx-auto px-4 py-16 my-8 relative overflow-hidden rounded-[2.5rem] bg-gradient-to-tr from-indigo-50/50 via-white to-sky-50/30 border border-slate-100 shadow-sm">
+        <!-- About Section (Full Width Background) -->
+<section id="about" data-aos="fade-up" class="relative w-full py-20 overflow-hidden bg-gradient-to-tr from-indigo-50/70 via-white to-sky-50/40 border-y border-slate-100 my-4">
     
-    <!-- Background World Map Pattern (Tetap dipertahankan dengan opacity yang disesuaikan) -->
-    <div class="absolute inset-0 opacity-[0.05] pointer-events-none" 
-         style="background-image: url('https://i.imgur.com/I4mIgpj.png'); background-repeat: repeat; background-size: 200px;">
+    <!-- Background World Map Pattern (Full Lebar) -->
+    <div class="absolute inset-0 opacity-[0.06] pointer-events-none" 
+         style="background-image: url('https://i.imgur.com/I4mIgpj.png'); background-repeat: repeat; background-size: 250px;">
     </div>
 
-    <!-- Tambahan Dot Grid Halus untuk Tekstur Korporat -->
+    <!-- Dot Grid Halus -->
     <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(#1e1b4b 1px, transparent 1px); background-size: 24px 24px;"></div>
 
-    <!-- Konten -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center relative z-10">
-        <div class="grid grid-cols-3 gap-3 md:gap-6">
-            <div class="bg-white/90 backdrop-blur-md p-4 md:p-6 rounded-2xl border border-indigo-100 text-center shadow-md shadow-indigo-50/50">
-                <h3 class="text-xl md:text-3xl font-extrabold text-indigo-950">28</h3>
-                <p class="text-[10px] md:text-sm font-semibold text-indigo-700">Cabang</p>
+    <!-- Konten (Dibatasi max-w-7xl agar tetap rapi di tengah) -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
+            
+            <!-- Kotak Statistik -->
+            <div class="grid grid-cols-3 gap-3 md:gap-6">
+                <div class="bg-white/90 backdrop-blur-md p-5 md:p-6 rounded-3xl border border-indigo-100 text-center shadow-lg shadow-indigo-100/50">
+                    <h3 class="text-2xl md:text-3xl font-extrabold text-indigo-950">28</h3>
+                    <p class="text-[10px] md:text-sm font-semibold text-indigo-700 mt-1">Cabang</p>
+                </div>
+                <div class="bg-white/90 backdrop-blur-md p-5 md:p-6 rounded-3xl border border-indigo-100 text-center shadow-lg shadow-indigo-100/50">
+                    <h3 class="text-2xl md:text-3xl font-extrabold text-indigo-950">50+</h3>
+                    <p class="text-[10px] md:text-sm font-semibold text-indigo-700 mt-1">Prinsipal</p>
+                </div>
+                <div class="bg-white/90 backdrop-blur-md p-5 md:p-6 rounded-3xl border border-indigo-100 text-center shadow-lg shadow-indigo-100/50">
+                    <h3 class="text-2xl md:text-3xl font-extrabold text-indigo-950">35K+</h3>
+                    <p class="text-[10px] md:text-sm font-semibold text-indigo-700 mt-1">Gerai</p>
+                </div>
             </div>
-            <div class="bg-white/90 backdrop-blur-md p-4 md:p-6 rounded-2xl border border-indigo-100 text-center shadow-md shadow-indigo-50/50">
-                <h3 class="text-xl md:text-3xl font-extrabold text-indigo-950">50+</h3>
-                <p class="text-[10px] md:text-sm font-semibold text-indigo-700">Prinsipal</p>
+
+            <!-- Teks Deskripsi -->
+            <div class="space-y-4">
+                <span class="inline-block text-indigo-600 font-bold tracking-widest uppercase text-xs bg-indigo-50 px-3.5 py-1.5 rounded-full border border-indigo-100">Tentang Kami</span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-950 leading-tight">Menjadi Jembatan Kepercayaan dalam Distribusi Kesehatan</h2>
+                <p class="text-gray-600 text-sm md:text-base lg:text-lg leading-relaxed">
+                    Sejak 1973, PT Mensa Binasukses (MBS) telah mendedikasikan lebih dari lima dekade untuk memastikan akses kesehatan yang merata di seluruh nusantara. Kini, MBS berdiri sebagai salah satu dari 10 besar distributor farmasi nasional dengan operasional bersertifikasi CDOB di setiap cabang.
+                </p>
             </div>
-            <div class="bg-white/90 backdrop-blur-md p-4 md:p-6 rounded-2xl border border-indigo-100 text-center shadow-md shadow-indigo-50/50">
-                <h3 class="text-xl md:text-3xl font-extrabold text-indigo-950">35K+</h3>
-                <p class="text-[10px] md:text-sm font-semibold text-indigo-700">Gerai</p>
-            </div>
-        </div>
-        <div>
-            <span class="text-indigo-600 font-bold tracking-widest uppercase text-xs bg-indigo-50 px-3 py-1 rounded-full border border-indigo-100">Tentang Kami</span>
-            <h2 class="text-2xl md:text-4xl lg:text-5xl font-extrabold text-gray-950 mt-3 mb-6 leading-tight">Menjadi Jembatan Kepercayaan dalam Distribusi Kesehatan</h2>
-            <p class="text-gray-600 text-sm md:text-lg leading-relaxed">
-                Sejak 1973, PT Mensa Binasukses (MBS) telah mendedikasikan lebih dari lima dekade untuk memastikan akses kesehatan yang merata di seluruh nusantara. Kini, MBS berdiri sebagai salah satu dari 10 besar distributor farmasi nasional dengan operasional bersertifikasi CDOB di setiap cabang.
-            </p>
+
         </div>
     </div>
 </section>
