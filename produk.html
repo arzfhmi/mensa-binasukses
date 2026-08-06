@@ -79,13 +79,13 @@
     </nav>
 </div>
 
-    <!-- HERO BANNER HEADER (FULL WIDTH CONTAINER) -->
+    <!-- HERO BANNER HEADER (FULL WIDTH CONTAINER SEJAJAR NAVBAR) -->
     <div class="w-full px-4 sm:px-6 lg:px-8 mb-12">
-        <div class="relative bg-[#1c1945] text-white py-24 px-6 md:px-16 overflow-hidden rounded-[2.5rem] shadow-xl max-w-7xl mx-auto" data-aos="fade-up">
+        <div class="relative bg-[#1c1945] text-white py-20 px-6 md:px-16 overflow-hidden rounded-[2.5rem] shadow-xl max-w-7xl mx-auto" data-aos="fade-up">
             <div class="absolute inset-0 opacity-20 mix-blend-overlay">
                 <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=1600&auto=format&fit=crop" class="w-full h-full object-cover" alt="Distribusi Farmasi">
             </div>
-            <div class="relative z-10 max-w-4xl mx-auto text-center space-y-6">
+            <div class="relative z-10 max-w-4xl mx-auto text-center space-y-4">
                 <div class="inline-flex items-center gap-2 py-2 px-5 rounded-full bg-indigo-500/30 border border-indigo-400/30 text-indigo-200 font-bold tracking-widest uppercase text-xs shadow-sm">
                     <span class="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
                     Portofolio & Jaringan Kemitraan
@@ -96,32 +96,15 @@
                 <p class="max-w-2xl mx-auto text-sm md:text-base leading-relaxed text-indigo-200">
                     Menghubungkan prinsipal global dan nasional dengan lebih dari <span class="font-bold text-white">35.000+</span> fasilitas layanan kesehatan di seluruh Indonesia melalui standar mutu tertinggi.
                 </p>
-
-                <!-- MODULAR SWITCHER (TAB NAVIGATION) -->
-                <div class="pt-4 flex justify-center">
-                    <div class="inline-flex bg-white/10 p-1.5 rounded-full backdrop-blur-md border border-white/10 shadow-lg">
-                        <button @click="activeTab = 'layanan'" 
-                                :class="activeTab === 'layanan' ? 'bg-white text-indigo-950 font-bold shadow-md' : 'text-white hover:text-indigo-200'"
-                                class="px-6 py-2.5 rounded-full text-xs md:text-sm transition-all duration-300 flex items-center gap-2">
-                            <i class="fas fa-cubes"></i> Bagian 1: Layanan Kami
-                        </button>
-                        <button @click="activeTab = 'direktori'" 
-                                :class="activeTab === 'direktori' ? 'bg-white text-indigo-950 font-bold shadow-md' : 'text-white hover:text-indigo-200'"
-                                class="px-6 py-2.5 rounded-full text-xs md:text-sm transition-all duration-300 flex items-center gap-2">
-                            <i class="fas fa-handshake"></i> Bagian 2: Mitra Prinsipal
-                        </button>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
 
-    <!-- KONTEN UTAMA DENGAN SISTEM MODULAR -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 relative z-10">
+    <!-- KONTEN UTAMA (TERSUSUN KE BAWAH SECARA UTUH) -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 relative z-10 space-y-24">
 
-        <!-- ================= BAGIAN 1: LAYANAN KAMI ================= -->
-        <div x-show="activeTab === 'layanan'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0" class="space-y-12">
-            
+        <!-- ================= SECTION 1: CAKUPAN 3 DIVISI UTAMA ================= -->
+        <section class="space-y-12">
             <div class="text-center max-w-2xl mx-auto">
                 <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900">Cakupan Divisi & Standar Operasional</h2>
                 <p class="text-gray-600 text-sm mt-2">Dikelola berdasarkan kepatuhan regulasi Cara Distribusi Obat yang Baik (CDOB / GDP) dan manajemen rantai dingin yang ketat.</p>
@@ -185,18 +168,11 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Call to Switch to Directory -->
-            <div class="text-center pt-6">
-                <button @click="activeTab = 'direktori'; window.scrollTo({top: 300, behavior: 'smooth'})" class="inline-flex items-center gap-2 bg-indigo-700 text-white px-8 py-3.5 rounded-full font-bold hover:bg-indigo-800 transition shadow-lg shadow-indigo-200 text-sm">
-                    Lihat Daftar Mitra Prinsipal Kami <i class="fas fa-arrow-right"></i>
-                </button>
-            </div>
-        </div>
+        </section>
 
 
-        <!-- ================= BAGIAN 2: JARINGAN & MITRA PRINSIPAL ================= -->
-        <div x-show="activeTab === 'direktori'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0" x-data="{ search: '', selectedDivisi: 'ALL' }" class="space-y-8">
+        <!-- ================= SECTION 2: DIREKTORI & MITRA PRINSIPAL ================= -->
+        <section class="space-y-8 pt-10 border-t border-slate-200" x-data="{ search: '', selectedDivisi: 'ALL' }">
             
             <div class="text-center max-w-2xl mx-auto">
                 <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900">Direktori Prinsipal & Mitra Komersial</h2>
@@ -368,16 +344,9 @@
                 </div>
             </div>
 
-            <!-- Call to Switch back to Service -->
-            <div class="text-center pt-6">
-                <button @click="activeTab = 'layanan'; window.scrollTo({top: 300, behavior: 'smooth'})" class="inline-flex items-center gap-2 text-indigo-700 bg-indigo-50 border border-indigo-200 px-8 py-3.5 rounded-full font-bold hover:bg-indigo-100 transition text-sm">
-                    <i class="fas fa-arrow-left"></i> Kembali ke Penjelasan Layanan
-                </button>
-            </div>
-        </div>
+        </section>
 
-    </main>
-        
+    </main>        
     <!-- FOOTER SECTION -->
 <footer class="bg-[#1c1945] text-slate-300 pt-16 pb-8 px-6 border-t border-indigo-950">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-indigo-900/50">
