@@ -15,18 +15,18 @@
 
     <!-- HERO SECTION -->
 <div class="relative w-full px-4 py-8">
-    <nav class="max-w-7xl mx-auto mt-6 bg-white rounded-full px-6 py-3 flex items-center justify-between shadow-lg border border-gray-100 sticky top-4 z-[9999]">
+    <nav class="max-w-[86rem] mx-auto mt-6 bg-white rounded-full px-8 py-3.5 flex items-center justify-between shadow-lg border border-gray-100 sticky top-4 z-[9999]">
         <!-- Logo -->
-        <div class="flex items-center gap-2 shrink-0">
-            <img src="https://i.imgur.com/4gdks1j.png" class="h-8 w-auto">
-            <h1 class="font-bold text-lg text-gray-900 hidden md:block">PT Mensa Binasukses</h1>
+        <div class="flex items-center gap-3 shrink-0">
+            <img src="https://i.imgur.com/4gdks1j.png" class="h-9 w-auto">
+            <h1 class="font-bold text-base lg:text-lg text-gray-900 hidden md:block tracking-tight">PT Mensa Binasukses</h1>
         </div>
 
-        <!-- Menu Links (SEMUA MENU BERADA DI DALAM SATU DIV INI) -->
-        <div class="flex items-center gap-4 lg:gap-6 font-semibold text-gray-700 text-sm lg:text-base">
+        <!-- Menu Links (Jarak antar menu diperlebar dengan gap-6 lg:gap-8) -->
+        <div class="hidden xl:flex items-center gap-6 lg:gap-8 font-semibold text-gray-700 text-sm lg:text-base">
             <a href="index.html" class="hover:text-indigo-700 transition">Beranda</a>
 
-            <!-- Dropdown Tentang Kami (Bisa diklik ke tentang.html DAN ada dropdown) -->
+            <!-- Dropdown Tentang Kami -->
             <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
                 <a href="tentang.html" class="flex items-center gap-1 hover:text-indigo-700 transition">
                     <span>Tentang Kami</span>
@@ -43,7 +43,7 @@
 
             <a href="produk.html" class="hover:text-indigo-700 transition">Produk</a>
 
-            <!-- Dropdown Bisnis & Layanan (Bisa diklik ke keunggulan.html DAN ada dropdown) -->
+            <!-- Dropdown Bisnis & Layanan -->
             <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
                 <a href="keunggulan.html" class="flex items-center gap-1 hover:text-indigo-700 transition">
                     <span>Bisnis & Layanan</span>
@@ -58,15 +58,19 @@
                 </div>
             </div>
 
-            <a href="karier.html" class="hover:text-indigo-700 transition">Karier</a>
+            <!-- Training Center -->
+            <a href="training.html" class="hover:text-indigo-700 transition">Training Center</a>
 
-            <!-- MENU BARU: NEWS & ACTIVITIES -->
+            <!-- Kegiatan & Berita -->
             <a href="kegiatan.html" class="hover:text-indigo-700 transition">Kegiatan & Berita</a>
+
+            <!-- Karier -->
+            <a href="karir.html" class="hover:text-indigo-700 transition">Karier</a>
         </div>
 
         <!-- Hubungi Kami -->
         <div class="shrink-0">
-            <a href="kontak.html" class="bg-indigo-700 text-white px-5 py-2 rounded-full hover:bg-indigo-800 transition text-sm shadow-md shadow-indigo-200">Hubungi Kami →</a>
+            <a href="kontak.html" class="bg-indigo-700 text-white px-6 py-2.5 rounded-full hover:bg-indigo-800 transition text-sm font-semibold shadow-md shadow-indigo-200">Hubungi Kami →</a>
         </div>
     </nav>
 </div>
