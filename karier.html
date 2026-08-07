@@ -209,7 +209,29 @@
 
 
 <!-- ================= SECTION 3: LOWONGAN PEKERJAAN (POSISI TERSEDIA) ================= -->
-<section class="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-20" data-aos="fade-up">
+<section class="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-20" data-aos="fade-up"
+    x-data="{
+        search: '',
+        selectedDept: 'Semua Departemen',
+        selectedLocation: 'Semua Lokasi',
+        jobs: [
+            { title: 'Staff Adm Retur', location: 'Jakarta', type: 'Full-time', dept: 'Retur' },
+            { title: 'Purchasing Staff', location: 'Jakarta', type: 'Full-time', dept: 'Purchasing' },
+            { title: 'Delivery Driver', location: 'Multiple Locations', type: 'Full-time', dept: 'Logistics' },
+            { title: 'Pharmacist', location: 'Jakarta', type: 'Full-time', dept: 'Quality Assurance' },
+            { title: 'Warehouse Supervisor', location: 'Bandung, Semarang', type: 'Full-time', dept: 'Operations' },
+            { title: 'Sales Representative', location: 'Jakarta, Surabaya, Medan', type: 'Full-time', dept: 'Sales' }
+        ],
+        get filteredJobs() {
+            return this.jobs.filter(job => {
+                let matchesSearch = job.title.toLowerCase().includes(this.search.toLowerCase());
+                let matchesDept = this.selectedDept === 'Semua Departemen' || job.dept.toLowerCase() === this.selectedDept.toLowerCase();
+                let matchesLocation = this.selectedLocation === 'Semua Lokasi' || job.location.toLowerCase().includes(this.selectedLocation.toLowerCase());
+                return matchesSearch && matchesDept && matchesLocation;
+            });
+        }
+    }">
+    
     <!-- Header & Filter -->
     <div class="space-y-6 mb-8" data-aos="fade-up">
         <div>
@@ -224,23 +246,25 @@
                 <span class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-gray-400">
                     <i class="fas fa-search text-xs"></i>
                 </span>
-                <input type="text" placeholder="Cari posisi atau kata kunci..." class="w-full pl-10 pr-4 py-3 bg-white border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-indigo-600 shadow-sm">
+                <input type="text" x-model="search" placeholder="Cari posisi atau kata kunci..." class="w-full pl-10 pr-4 py-3 bg-white border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-indigo-600 shadow-sm">
             </div>
 
             <!-- Dropdown Departemen -->
             <div>
-                <select class="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm text-gray-700 focus:outline-none focus:border-indigo-600 shadow-sm">
+                <select x-model="selectedDept" class="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm text-gray-700 focus:outline-none focus:border-indigo-600 shadow-sm">
                     <option>Semua Departemen</option>
-                    <option>Logistik & Warehouse</option>
+                    <option>Retur</option>
+                    <option>Purchasing</option>
+                    <option>Logistics</option>
                     <option>Quality Assurance</option>
-                    <option>Sales & Marketing</option>
-                    <option>Admin & Finance</option>
+                    <option>Operations</option>
+                    <option>Sales</option>
                 </select>
             </div>
 
             <!-- Dropdown Lokasi -->
             <div>
-                <select class="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm text-gray-700 focus:outline-none focus:border-indigo-600 shadow-sm">
+                <select x-model="selectedLocation" class="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm text-gray-700 focus:outline-none focus:border-indigo-600 shadow-sm">
                     <option>Semua Lokasi</option>
                     <option>Jakarta</option>
                     <option>Bandung</option>
@@ -252,119 +276,35 @@
         </div>
 
         <div class="text-xs text-gray-500 font-medium">
-            Menampilkan <span class="font-bold text-gray-800">6</span> dari <span class="font-bold text-gray-800">6</span> posisi
+            Menampilkan <span class="font-bold text-gray-800" x-text="filteredJobs.length"></span> dari <span class="font-bold text-gray-800" x-text="jobs.length"></span> posisi
         </div>
     </div>
 
-    <!-- List Lowongan (Item Rows dengan Animasi Masuk Berkelanjutan / Staggered) -->
+    <!-- List Lowongan (Dinamis menggunakan Alpine.js x-for) -->
     <div class="bg-white rounded-2xl border border-slate-200 divide-y divide-slate-100 shadow-sm overflow-hidden" data-aos="fade-up" data-aos-delay="150">
         
-        <!-- Job Item 1 -->
-        <div class="p-5 md:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-slate-50/80 transition" data-aos="fade-up" data-aos-delay="200">
-            <div class="space-y-1.5">
-                <h3 class="font-extrabold text-gray-900 text-lg">Staff Adm Retur</h3>
-                <div class="flex flex-wrap items-center gap-3 text-xs text-gray-500 font-medium">
-                    <span><i class="fas fa-map-marker-alt text-indigo-600 mr-1"></i> Jakarta</span>
-                    <span>&bull;</span>
-                    <span>Full-time</span>
-                    <span class="bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-md font-semibold text-[11px]">Retur</span>
+        <template x-for="job in filteredJobs" :key="job.title">
+            <div class="p-5 md:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-slate-50/80 transition">
+                <div class="space-y-1.5">
+                    <h3 class="font-extrabold text-gray-900 text-lg" x-text="job.title"></h3>
+                    <div class="flex flex-wrap items-center gap-3 text-xs text-gray-500 font-medium">
+                        <span><i class="fas fa-map-marker-alt text-indigo-600 mr-1"></i> <span x-text="job.location"></span></span>
+                        <span>&bull;</span>
+                        <span x-text="job.type"></span>
+                        <span class="bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-md font-semibold text-[11px]" x-text="job.dept"></span>
+                    </div>
+                </div>
+                <div>
+                    <a href="#lamar" class="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-50 text-indigo-700 hover:bg-indigo-700 hover:text-white rounded-xl font-bold text-xs transition shadow-sm">
+                        Lamar <i class="fas fa-arrow-right text-[10px]"></i>
+                    </a>
                 </div>
             </div>
-            <div>
-                <a href="#lamar" class="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-50 text-indigo-700 hover:bg-indigo-700 hover:text-white rounded-xl font-bold text-xs transition shadow-sm">
-                    Lamar <i class="fas fa-arrow-right text-[10px]"></i>
-                </a>
-            </div>
-        </div>
+        </template>
 
-        <!-- Job Item 2 -->
-        <div class="p-5 md:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-slate-50/80 transition" data-aos="fade-up" data-aos-delay="250">
-            <div class="space-y-1.5">
-                <h3 class="font-extrabold text-gray-900 text-lg">Purchasing Staff</h3>
-                <div class="flex flex-wrap items-center gap-3 text-xs text-gray-500 font-medium">
-                    <span><i class="fas fa-map-marker-alt text-indigo-600 mr-1"></i> Jakarta</span>
-                    <span>&bull;</span>
-                    <span>Full-time</span>
-                    <span class="bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-md font-semibold text-[11px]">Purchasing</span>
-                </div>
-            </div>
-            <div>
-                <a href="#lamar" class="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-50 text-indigo-700 hover:bg-indigo-700 hover:text-white rounded-xl font-bold text-xs transition shadow-sm">
-                    Lamar <i class="fas fa-arrow-right text-[10px]"></i>
-                </a>
-            </div>
-        </div>
-
-        <!-- Job Item 3 -->
-        <div class="p-5 md:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-slate-50/80 transition" data-aos="fade-up" data-aos-delay="300">
-            <div class="space-y-1.5">
-                <h3 class="font-extrabold text-gray-900 text-lg">Delivery Driver</h3>
-                <div class="flex flex-wrap items-center gap-3 text-xs text-gray-500 font-medium">
-                    <span><i class="fas fa-map-marker-alt text-indigo-600 mr-1"></i> Multiple Locations</span>
-                    <span>&bull;</span>
-                    <span>Full-time</span>
-                    <span class="bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-md font-semibold text-[11px]">Logistics</span>
-                </div>
-            </div>
-            <div>
-                <a href="#lamar" class="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-50 text-indigo-700 hover:bg-indigo-700 hover:text-white rounded-xl font-bold text-xs transition shadow-sm">
-                    Lamar <i class="fas fa-arrow-right text-[10px]"></i>
-                </a>
-            </div>
-        </div>
-
-        <!-- Job Item 4 -->
-        <div class="p-5 md:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-slate-50/80 transition" data-aos="fade-up" data-aos-delay="350">
-            <div class="space-y-1.5">
-                <h3 class="font-extrabold text-gray-900 text-lg">Pharmacist</h3>
-                <div class="flex flex-wrap items-center gap-3 text-xs text-gray-500 font-medium">
-                    <span><i class="fas fa-map-marker-alt text-indigo-600 mr-1"></i> Jakarta</span>
-                    <span>&bull;</span>
-                    <span>Full-time</span>
-                    <span class="bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-md font-semibold text-[11px]">Quality Assurance</span>
-                </div>
-            </div>
-            <div>
-                <a href="#lamar" class="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-50 text-indigo-700 hover:bg-indigo-700 hover:text-white rounded-xl font-bold text-xs transition shadow-sm">
-                    Lamar <i class="fas fa-arrow-right text-[10px]"></i>
-                </a>
-            </div>
-        </div>
-
-        <!-- Job Item 5 -->
-        <div class="p-5 md:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-slate-50/80 transition" data-aos="fade-up" data-aos-delay="400">
-            <div class="space-y-1.5">
-                <h3 class="font-extrabold text-gray-900 text-lg">Warehouse Supervisor</h3>
-                <div class="flex flex-wrap items-center gap-3 text-xs text-gray-500 font-medium">
-                    <span><i class="fas fa-map-marker-alt text-indigo-600 mr-1"></i> Bandung, Semarang</span>
-                    <span>&bull;</span>
-                    <span>Full-time</span>
-                    <span class="bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-md font-semibold text-[11px]">Operations</span>
-                </div>
-            </div>
-            <div>
-                <a href="#lamar" class="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-50 text-indigo-700 hover:bg-indigo-700 hover:text-white rounded-xl font-bold text-xs transition shadow-sm">
-                    Lamar <i class="fas fa-arrow-right text-[10px]"></i>
-                </a>
-            </div>
-        </div>
-
-        <!-- Job Item 6 -->
-        <div class="p-5 md:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-slate-50/80 transition" data-aos="fade-up" data-aos-delay="450">
-            <div class="space-y-1.5">
-                <h3 class="font-extrabold text-gray-900 text-lg">Sales Representative</h3>
-                <div class="flex flex-wrap items-center gap-3 text-xs text-gray-500 font-medium">
-                    <span><i class="fas fa-map-marker-alt text-indigo-600 mr-1"></i> Jakarta, Surabaya, Medan</span>
-                    <span>&bull;</span>
-                    <span>Full-time</span>
-                    <span class="bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-md font-semibold text-[11px]">Sales</span>
-                </div>
-            </div>
-            <div>
-                <a href="#lamar" class="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-50 text-indigo-700 hover:bg-indigo-700 hover:text-white rounded-xl font-bold text-xs transition shadow-sm">
-                    Lamar <i class="fas fa-arrow-right text-[10px]"></i>
-                </a>
-            </div>
+        <!-- Pesan Kosong Jika Data Tidak Ditemukan -->
+        <div x-show="filteredJobs.length === 0" class="p-8 text-center text-gray-500 text-sm">
+            Tidak ada posisi yang cocok dengan kriteria pencarian Anda.
         </div>
 
     </div>
