@@ -15,7 +15,13 @@
     <style>
         [x-cloak] { display: none !important; }
         /* Foto placeholder abu-abu */
-        .ph-foto { background-color: #e2e8f0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23334155' fill-opacity='0.1'%3E%3Ccircle cx='40' cy='28' r='12'/%3E%3Cpath d='M65 66.67c0-13.67-11-24.67-25-24.67S15 53 15 66.67h50z'/%3E%3C/g%3E%3C/svg%3E"); background-position: center; background-repeat: no-repeat; }
+        .ph-foto { background-color: #cbd5e1; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23334155' fill-opacity='0.15'%3E%3Ccircle cx='40' cy='28' r='12'/%3E%3Cpath d='M65 66.67c0-13.67-11-24.67-25-24.67S15 53 15 66.67h50z'/%3E%3C/g%3E%3C/svg%3E"); background-position: center; background-repeat: no-repeat; }
+        
+        /* Pola Ornamen Titik Halus di Background Gelap */
+        .bg-pattern {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
     </style>
 </head>
 
@@ -91,120 +97,132 @@
     <!-- ==============================================
          MAIN CONTENT AREA (BAGAN MANAGEMENT)
          ============================================== -->
-    <main class="flex-grow py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+    <main class="flex-grow w-full">
         
-        <!-- Header Halaman -->
-        <div class="mb-20 text-center" data-aos="fade-up">
-            <span class="text-indigo-600 font-bold tracking-widest uppercase text-xs">LEADERSHIP</span>
-            <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight mt-2">Tim Manajemen Kami</h2>
-            <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-                Para pemimpin berpengalaman yang mengarahkan PT Mensa Binasukses menuju visi dan misi kami.
-            </p>
-        </div>
+        <!-- ================= TIER 1: BOARD OF DIRECTORS (Latar Belakang Gelap / Deep Navy & Ornamen) ================= -->
+        <div class="relative bg-[#1c1945] bg-pattern text-white py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+            <!-- Efek Cahaya Dekoratif di Background -->
+            <div class="absolute -top-40 -left-40 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute top-1/2 -right-40 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl pointer-events-none"></div>
 
-        <!-- ================= TIER 1: BOARD OF DIRECTORS ================= -->
-        <div class="mb-16 space-y-10" data-aos="fade-up">
-            <!-- Row 1 (President Director) -->
-            <div class="flex justify-center">
-                <div class="text-center bg-white p-10 rounded-3xl shadow-xl border border-gray-100 max-w-xl w-full transform transition hover:-translate-y-1 hover:shadow-2xl duration-300">
-                    <div class="ph-foto w-44 h-44 rounded-full mx-auto mb-8 shadow-lg border-4 border-indigo-50"></div>
-                    <h3 class="font-extrabold text-2xl text-gray-900">NOVITA</h3>
-                    <p class="text-indigo-700 font-bold text-lg mt-1">President Director</p>
-                    <div class="w-16 h-1 bg-indigo-100 mx-auto my-6 rounded-full"></div>
-                    <blockquote class="text-gray-600 italic text-base leading-relaxed max-w-md mx-auto">
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum."
-                    </blockquote>
+            <div class="max-w-7xl mx-auto relative z-10">
+                <!-- Header Halaman -->
+                <div class="mb-16 text-center" data-aos="fade-up">
+                    <span class="text-indigo-400 font-bold tracking-widest uppercase text-xs bg-indigo-950/60 px-4 py-1.5 rounded-full border border-indigo-800/50">LEADERSHIP</span>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight mt-3">Tim Manajemen Kami</h2>
+                    <p class="mt-4 text-lg text-slate-300 max-w-2xl mx-auto">
+                        Para pemimpin berpengalaman yang mengarahkan PT Mensa Binasukses menuju visi dan misi kami.
+                    </p>
+                </div>
+
+                <div class="space-y-10" data-aos="fade-up">
+                    <!-- Row 1 (President Director) - Glassmorphism Card -->
+                    <div class="flex justify-center">
+                        <div class="text-center bg-white/10 backdrop-blur-md p-10 rounded-3xl shadow-2xl border border-white/15 max-w-xl w-full transform transition hover:-translate-y-1 hover:border-indigo-400/50 duration-300">
+                            <div class="ph-foto w-44 h-44 rounded-full mx-auto mb-8 shadow-inner border-4 border-white/20"></div>
+                            <h3 class="font-extrabold text-2xl text-white tracking-wide">NOVITA</h3>
+                            <p class="text-indigo-300 font-bold text-lg mt-1">President Director</p>
+                            <div class="w-16 h-1 bg-indigo-500/50 mx-auto my-6 rounded-full"></div>
+                            <blockquote class="text-slate-200 italic text-base leading-relaxed max-w-md mx-auto">
+                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum."
+                            </blockquote>
+                        </div>
+                    </div>
+
+                    <!-- Connector Line ke Directors -->
+                    <div class="hidden md:block h-10 border-l-2 border-indigo-800/60 mx-auto w-0.5"></div>
+
+                    <!-- Row 2 (Directors) - Glassmorphism Cards -->
+                    <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+                        <!-- Director 1 -->
+                        <div class="text-center bg-white/10 backdrop-blur-md p-8 rounded-3xl shadow-xl border border-white/15 transform transition hover:-translate-y-1 hover:border-indigo-400/50 duration-300">
+                            <div class="ph-foto w-36 h-36 rounded-full mx-auto mb-6 shadow-inner border-4 border-white/20"></div>
+                            <h3 class="font-bold text-xl text-white">DONI RIZAL</h3>
+                            <p class="text-indigo-300 font-medium text-base mt-1">Business & Operations Director</p>
+                            <div class="w-12 h-0.5 bg-indigo-500/50 mx-auto my-4 rounded-full"></div>
+                            <p class="text-slate-300 text-sm leading-relaxed px-4">
+                                "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+                            </p>
+                        </div>
+                        <!-- Director 2 -->
+                        <div class="text-center bg-white/10 backdrop-blur-md p-8 rounded-3xl shadow-xl border border-white/15 transform transition hover:-translate-y-1 hover:border-indigo-400/50 duration-300">
+                            <div class="ph-foto w-36 h-36 rounded-full mx-auto mb-6 shadow-inner border-4 border-white/20"></div>
+                            <h3 class="font-bold text-xl text-white">LIE GUNAWAN</h3>
+                            <p class="text-indigo-300 font-medium text-base mt-1">Director</p>
+                            <div class="w-12 h-0.5 bg-indigo-500/50 mx-auto my-4 rounded-full"></div>
+                            <p class="text-slate-300 text-sm leading-relaxed px-4">
+                                "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Connector Line -->
-            <div class="hidden md:block h-12 border-l-2 border-gray-200 mx-auto w-0.5"></div>
-
-            <!-- Row 2 (Directors) -->
-            <div class="grid md:grid-cols-2 gap-10">
-                <!-- Director 1 -->
-                <div class="text-center bg-white p-8 rounded-3xl shadow-lg border border-gray-100 transform transition hover:-translate-y-1 hover:shadow-xl duration-300">
-                    <div class="ph-foto w-36 h-36 rounded-full mx-auto mb-6 shadow-md border-4 border-indigo-50"></div>
-                    <h3 class="font-bold text-xl text-gray-900">DONI RIZAL</h3>
-                    <p class="text-indigo-700 font-medium text-base mt-1">Business & Operations Director</p>
-                    <div class="w-12 h-0.5 bg-indigo-100 mx-auto my-4 rounded-full"></div>
-                    <p class="text-gray-500 text-sm leading-relaxed px-4">
-                        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-                    </p>
-                </div>
-                <!-- Director 2 -->
-                <div class="text-center bg-white p-8 rounded-3xl shadow-lg border border-gray-100 transform transition hover:-translate-y-1 hover:shadow-xl duration-300">
-                    <div class="ph-foto w-36 h-36 rounded-full mx-auto mb-6 shadow-md border-4 border-indigo-50"></div>
-                    <h3 class="font-bold text-xl text-gray-900">LIE GUNAWAN</h3>
-                    <p class="text-indigo-700 font-medium text-base mt-1">Director</p>
-                    <div class="w-12 h-0.5 bg-indigo-100 mx-auto my-4 rounded-full"></div>
-                    <p class="text-gray-500 text-sm leading-relaxed px-4">
-                        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                    </p>
-                </div>
-            </div>
+            <!-- Gelombang Transisi / Pemisah Halus di Bawah Bagian Gelap -->
+            <div class="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-gray-50 to-transparent pointer-events-none"></div>
         </div>
 
-        <!-- Connector Line Panjang Menuju Tier 2 -->
-        <div class="hidden md:block h-20 border-l-2 border-gray-200 mx-auto w-0.5 mb-16"></div>
-        <div class="hidden md:block -mt-16 relative top-0 w-full border-t-2 border-gray-200 mb-16"></div>
-
-
-        <!-- ================= TIER 2: GENERAL MANAGERS ================= -->
-        <div class="space-y-12" data-aos="fade-up" data-aos-delay="200">
+        <!-- ================= TIER 2: GENERAL MANAGERS (Background Terang / Clean Section) ================= -->
+        <div class="max-w-7xl mx-auto py-20 px-4 sm:px-6 lg:px-8">
             
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h4 class="text-2xl font-bold text-gray-900 tracking-tight">General Managers & Operation Leads</h4>
-                <p class="text-gray-500 mt-3 text-sm">Memimpin divisi operasional kunci untuk memastikan efisiensi dan kualitas layanan nasional.</p>
-            </div>
+            <!-- Connector Line dari Tier 1 ke Tier 2 -->
+            <div class="hidden md:block h-12 border-l-2 border-gray-300 mx-auto w-0.5 mb-16"></div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- GM CPO -->
-                <div class="text-center bg-white p-7 rounded-2xl shadow-md border border-gray-100 flex flex-col">
-                    <div class="ph-foto w-28 h-28 rounded-full mx-auto mb-5 shadow-sm border-4 border-indigo-50"></div>
-                    <div class="flex-grow">
-                        <h4 class="font-semibold text-lg text-gray-900">CHARLES KURNIAWAN</h4>
-                        <p class="text-indigo-700 font-medium text-xs mt-1">General Manager CPO</p>
-                        <div class="w-10 h-0.5 bg-indigo-100 mx-auto my-3 rounded-full"></div>
-                        <p class="text-gray-500 text-xs leading-relaxed">"Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
-                    </div>
-                </div>
+            <div class="space-y-12" data-aos="fade-up" data-aos-delay="200">
                 
-                <!-- GM PHARMA -->
-                <div class="text-center bg-white p-7 rounded-2xl shadow-md border border-gray-100 flex flex-col">
-                    <div class="ph-foto w-28 h-28 rounded-full mx-auto mb-5 shadow-sm border-4 border-indigo-50"></div>
-                    <div class="flex-grow">
-                        <h4 class="font-semibold text-lg text-gray-900">PUTRA MOH NURDUMANSYAH</h4>
-                        <p class="text-indigo-700 font-medium text-xs mt-1">General Manager Pharma</p>
-                        <div class="w-10 h-0.5 bg-indigo-100 mx-auto my-3 rounded-full"></div>
-                        <p class="text-gray-500 text-xs leading-relaxed">"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip."</p>
-                    </div>
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h4 class="text-3xl font-bold text-gray-900 tracking-tight">General Managers & Operation Leads</h4>
+                    <p class="text-gray-500 mt-3 text-sm">Memimpin divisi operasional kunci untuk memastikan efisiensi dan kualitas layanan nasional.</p>
                 </div>
 
-                <!-- GM MDD -->
-                <div class="text-center bg-white p-7 rounded-2xl shadow-md border border-gray-100 flex flex-col">
-                    <div class="ph-foto w-28 h-28 rounded-full mx-auto mb-5 shadow-sm border-4 border-indigo-50"></div>
-                    <div class="flex-grow">
-                        <h4 class="font-semibold text-lg text-gray-900">PETER KAWIJAYA</h4>
-                        <p class="text-indigo-700 font-medium text-xs mt-1">General Manager MDD</p>
-                        <div class="w-10 h-0.5 bg-indigo-100 mx-auto my-3 rounded-full"></div>
-                        <p class="text-gray-500 text-xs leading-relaxed">"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat."</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- GM CPO -->
+                    <div class="text-center bg-white p-7 rounded-2xl shadow-md border border-gray-100 flex flex-col transform transition hover:-translate-y-1 hover:shadow-xl hover:border-indigo-200 duration-300">
+                        <div class="ph-foto w-28 h-28 rounded-full mx-auto mb-5 shadow-sm border-4 border-indigo-50"></div>
+                        <div class="flex-grow">
+                            <h4 class="font-semibold text-lg text-gray-900">CHARLES KURNIAWAN</h4>
+                            <p class="text-indigo-700 font-medium text-xs mt-1">General Manager CPO</p>
+                            <div class="w-10 h-0.5 bg-indigo-100 mx-auto my-3 rounded-full"></div>
+                            <p class="text-gray-500 text-xs leading-relaxed">"Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+                        </div>
                     </div>
-                </div>
+                    
+                    <!-- GM PHARMA -->
+                    <div class="text-center bg-white p-7 rounded-2xl shadow-md border border-gray-100 flex flex-col transform transition hover:-translate-y-1 hover:shadow-xl hover:border-indigo-200 duration-300">
+                        <div class="ph-foto w-28 h-28 rounded-full mx-auto mb-5 shadow-sm border-4 border-indigo-50"></div>
+                        <div class="flex-grow">
+                            <h4 class="font-semibold text-lg text-gray-900">PUTRA MOH NURDUMANSYAH</h4>
+                            <p class="text-indigo-700 font-medium text-xs mt-1">General Manager Pharma</p>
+                            <div class="w-10 h-0.5 bg-indigo-100 mx-auto my-3 rounded-full"></div>
+                            <p class="text-gray-500 text-xs leading-relaxed">"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip."</p>
+                        </div>
+                    </div>
 
-                <!-- GENERAL OPERATION (KOSONG) -->
-                <div class="text-center p-7 rounded-2xl border-2 border-dashed border-gray-200 flex flex-col bg-gray-50 opacity-60">
-                    <div class="w-28 h-28 rounded-full mx-auto mb-5 bg-gray-100 flex items-center justify-center border-4 border-white">
-                        <i class="fas fa-user-plus text-3xl text-gray-300"></i>
+                    <!-- GM MDD -->
+                    <div class="text-center bg-white p-7 rounded-2xl shadow-md border border-gray-100 flex flex-col transform transition hover:-translate-y-1 hover:shadow-xl hover:border-indigo-200 duration-300">
+                        <div class="ph-foto w-28 h-28 rounded-full mx-auto mb-5 shadow-sm border-4 border-indigo-50"></div>
+                        <div class="flex-grow">
+                            <h4 class="font-semibold text-lg text-gray-900">PETER KAWIJAYA</h4>
+                            <p class="text-indigo-700 font-medium text-xs mt-1">General Manager MDD</p>
+                            <div class="w-10 h-0.5 bg-indigo-100 mx-auto my-3 rounded-full"></div>
+                            <p class="text-gray-500 text-xs leading-relaxed">"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat."</p>
+                        </div>
                     </div>
-                    <div class="flex-grow">
-                        <h4 class="font-semibold text-lg text-gray-400">SEGERA HADIR</h4>
-                        <p class="text-gray-400 font-medium text-xs mt-1">General Operation</p>
-                        <div class="w-10 h-0.5 bg-gray-200 mx-auto my-3 rounded-full"></div>
-                        <p class="text-gray-400 text-xs italic">"Posisi kosong / segera diisi"</p>
-                    </div>
-                </div>
 
+                    <!-- GENERAL OPERATION (KOSONG) -->
+                    <div class="text-center p-7 rounded-2xl border-2 border-dashed border-gray-300 flex flex-col bg-white/50 opacity-85 hover:border-indigo-400 transition duration-300">
+                        <div class="w-28 h-28 rounded-full mx-auto mb-5 bg-gray-100 flex items-center justify-center border-4 border-white shadow-sm">
+                            <i class="fas fa-user-plus text-3xl text-indigo-400"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <h4 class="font-semibold text-lg text-gray-500">SEGERA HADIR</h4>
+                            <p class="text-indigo-600 font-medium text-xs mt-1">General Operation</p>
+                            <div class="w-10 h-0.5 bg-gray-200 mx-auto my-3 rounded-full"></div>
+                            <p class="text-gray-400 text-xs italic">"Posisi kosong / segera diisi"</p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
 
@@ -298,7 +316,6 @@
             <p>&copy; 2026 PT Mensa Binasukses. All Rights Reserved.</p>
         </div>
     </footer>
-
 
     <!-- Script AOS Animation Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
