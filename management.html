@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tim Manajemen - PT Mensa Binasukses</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Alpine.js untuk dropdown navbar -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- FontAwesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        [x-cloak] { display: none !important; }
+        /* Foto placeholder abu-abu */
+        .ph-foto { background-color: #e2e8f0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23334155' fill-opacity='0.1'%3E%3Ccircle cx='40' cy='28' r='12'/%3E%3Cpath d='M65 66.67c0-13.67-11-24.67-25-24.67S15 53 15 66.67h50z'/%3E%3C/g%3E%3C/svg%3E"); background-position: center; background-repeat: no-repeat; }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- ==============================================
+         HEADER SECTION (Navbar Konsisten)
+         ============================================== -->
+    <div class="relative w-full px-4 py-6 bg-white border-b border-gray-100 z-[9999]">
+        <nav class="max-w-[86rem] mx-auto bg-white rounded-full px-8 py-3.5 flex items-center justify-between shadow-sm border border-gray-100 sticky top-4 z-[9999]">
+            <!-- Logo -->
+            <div class="flex items-center gap-3 shrink-0">
+                <img src="https://i.imgur.com/4gdks1j.png" class="h-9 w-auto" alt="Logo MBS">
+                <h1 class="font-bold text-base lg:text-lg text-gray-900 hidden md:block tracking-tight">PT Mensa Binasukses</h1>
+            </div>
+
+            <!-- Menu Links -->
+            <div class="hidden xl:flex items-center gap-6 lg:gap-8 font-medium text-xs lg:text-sm text-gray-700">
+                <a href="index.html" class="nav-link hover:text-indigo-700 transition" data-page="index.html">Beranda</a>
+
+                <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
+                    <a href="tentang.html" class="nav-link flex items-center gap-1 hover:text-indigo-700 transition" data-page="tentang.html">
+                        <span>Tentang Kami</span>
+                        <span class="text-[10px]">▾</span>
+                    </a>
+                    <div x-show="open" x-cloak class="absolute top-full left-0 pt-2 w-48 z-[9999]">
+                        <div class="bg-white rounded-2xl shadow-xl border border-gray-100 py-2 font-normal text-xs">
+                            <a href="tentang.html" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition">Profil</a>
+                            <a href="founder.html" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition">Founder</a>
+                            <a href="management.html" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition">Management</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="produk.html" class="nav-link hover:text-indigo-700 transition" data-page="produk.html">Produk</a>
+
+                <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
+                    <a href="keunggulan.html" class="nav-link flex items-center gap-1 hover:text-indigo-700 transition" data-page="keunggulan.html">
+                        <span>Bisnis & Layanan</span>
+                        <span class="text-[10px]">▾</span>
+                    </a>
+                    <div x-show="open" x-cloak class="absolute top-full left-0 pt-2 w-56 z-[9999]">
+                        <div class="bg-white rounded-2xl shadow-xl border border-gray-100 py-2 font-normal text-xs">
+                            <a href="keunggulan.html#sales" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition">Sales</a>
+                            <a href="keunggulan.html#cabang" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition">Cabang</a>
+                            <a href="keunggulan.html#scm" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition">SCM & Warehouse</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="training.html" class="nav-link hover:text-indigo-700 transition" data-page="training.html">Training Center</a>
+                <a href="kegiatan.html" class="nav-link hover:text-indigo-700 transition" data-page="kegiatan.html">Kegiatan & Berita</a>
+                <a href="karier.html" class="nav-link hover:text-indigo-700 transition" data-page="karier.html">Karier</a>
+            </div>
+
+            <div class="shrink-0">
+                <a href="kontak.html" class="bg-indigo-700 text-white px-6 py-2.5 rounded-full hover:bg-indigo-800 transition text-xs lg:text-sm font-semibold shadow-md shadow-indigo-200">Hubungi Kami →</a>
+            </div>
+        </nav>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentPath = window.location.pathname.split("/").pop() || "index.html";
+            document.querySelectorAll(".nav-link").forEach(link => {
+                if (link.getAttribute("data-page") === currentPath) {
+                    link.classList.add("text-indigo-700", "font-semibold");
+                }
+            });
+        });
+    </script>
+
+    <!-- ==============================================
+         MAIN CONTENT AREA (BAGAN MANAGEMENT)
+         ============================================== -->
+    <main class="flex-grow py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        
+        <!-- Header Halaman -->
+        <div class="mb-20 text-center" data-aos="fade-up">
+            <span class="text-indigo-600 font-bold tracking-widest uppercase text-xs">LEADERSHIP</span>
+            <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight mt-2">Tim Manajemen Kami</h2>
+            <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+                Para pemimpin berpengalaman yang mengarahkan PT Mensa Binasukses menuju visi dan misi kami.
+            </p>
+        </div>
+
+        <!-- ================= TIER 1: BOARD OF DIRECTORS ================= -->
+        <div class="mb-16 space-y-10" data-aos="fade-up">
+            <!-- Row 1 (President Director) -->
+            <div class="flex justify-center">
+                <div class="text-center bg-white p-10 rounded-3xl shadow-xl border border-gray-100 max-w-xl w-full transform transition hover:-translate-y-1 hover:shadow-2xl duration-300">
+                    <div class="ph-foto w-44 h-44 rounded-full mx-auto mb-8 shadow-lg border-4 border-indigo-50"></div>
+                    <h3 class="font-extrabold text-2xl text-gray-900">NOVITA</h3>
+                    <p class="text-indigo-700 font-bold text-lg mt-1">President Director</p>
+                    <div class="w-16 h-1 bg-indigo-100 mx-auto my-6 rounded-full"></div>
+                    <blockquote class="text-gray-600 italic text-base leading-relaxed max-w-md mx-auto">
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum."
+                    </blockquote>
+                </div>
+            </div>
+
+            <!-- Connector Line -->
+            <div class="hidden md:block h-12 border-l-2 border-gray-200 mx-auto w-0.5"></div>
+
+            <!-- Row 2 (Directors) -->
+            <div class="grid md:grid-cols-2 gap-10">
+                <!-- Director 1 -->
+                <div class="text-center bg-white p-8 rounded-3xl shadow-lg border border-gray-100 transform transition hover:-translate-y-1 hover:shadow-xl duration-300">
+                    <div class="ph-foto w-36 h-36 rounded-full mx-auto mb-6 shadow-md border-4 border-indigo-50"></div>
+                    <h3 class="font-bold text-xl text-gray-900">DONI RIZAL</h3>
+                    <p class="text-indigo-700 font-medium text-base mt-1">Business & Operations Director</p>
+                    <div class="w-12 h-0.5 bg-indigo-100 mx-auto my-4 rounded-full"></div>
+                    <p class="text-gray-500 text-sm leading-relaxed px-4">
+                        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+                    </p>
+                </div>
+                <!-- Director 2 -->
+                <div class="text-center bg-white p-8 rounded-3xl shadow-lg border border-gray-100 transform transition hover:-translate-y-1 hover:shadow-xl duration-300">
+                    <div class="ph-foto w-36 h-36 rounded-full mx-auto mb-6 shadow-md border-4 border-indigo-50"></div>
+                    <h3 class="font-bold text-xl text-gray-900">LIE GUNAWAN</h3>
+                    <p class="text-indigo-700 font-medium text-base mt-1">Director</p>
+                    <div class="w-12 h-0.5 bg-indigo-100 mx-auto my-4 rounded-full"></div>
+                    <p class="text-gray-500 text-sm leading-relaxed px-4">
+                        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Connector Line Panjang Menuju Tier 2 -->
+        <div class="hidden md:block h-20 border-l-2 border-gray-200 mx-auto w-0.5 mb-16"></div>
+        <div class="hidden md:block -mt-16 relative top-0 w-full border-t-2 border-gray-200 mb-16"></div>
+
+
+        <!-- ================= TIER 2: GENERAL MANAGERS ================= -->
+        <div class="space-y-12" data-aos="fade-up" data-aos-delay="200">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h4 class="text-2xl font-bold text-gray-900 tracking-tight">General Managers & Operation Leads</h4>
+                <p class="text-gray-500 mt-3 text-sm">Memimpin divisi operasional kunci untuk memastikan efisiensi dan kualitas layanan nasional.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- GM CPO -->
+                <div class="text-center bg-white p-7 rounded-2xl shadow-md border border-gray-100 flex flex-col">
+                    <div class="ph-foto w-28 h-28 rounded-full mx-auto mb-5 shadow-sm border-4 border-indigo-50"></div>
+                    <div class="flex-grow">
+                        <h4 class="font-semibold text-lg text-gray-900">CHARLES KURNIAWAN</h4>
+                        <p class="text-indigo-700 font-medium text-xs mt-1">General Manager CPO</p>
+                        <div class="w-10 h-0.5 bg-indigo-100 mx-auto my-3 rounded-full"></div>
+                        <p class="text-gray-500 text-xs leading-relaxed">"Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+                    </div>
+                </div>
+                
+                <!-- GM PHARMA -->
+                <div class="text-center bg-white p-7 rounded-2xl shadow-md border border-gray-100 flex flex-col">
+                    <div class="ph-foto w-28 h-28 rounded-full mx-auto mb-5 shadow-sm border-4 border-indigo-50"></div>
+                    <div class="flex-grow">
+                        <h4 class="font-semibold text-lg text-gray-900">PUTRA MOH NURDUMANSYAH</h4>
+                        <p class="text-indigo-700 font-medium text-xs mt-1">General Manager Pharma</p>
+                        <div class="w-10 h-0.5 bg-indigo-100 mx-auto my-3 rounded-full"></div>
+                        <p class="text-gray-500 text-xs leading-relaxed">"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip."</p>
+                    </div>
+                </div>
+
+                <!-- GM MDD -->
+                <div class="text-center bg-white p-7 rounded-2xl shadow-md border border-gray-100 flex flex-col">
+                    <div class="ph-foto w-28 h-28 rounded-full mx-auto mb-5 shadow-sm border-4 border-indigo-50"></div>
+                    <div class="flex-grow">
+                        <h4 class="font-semibold text-lg text-gray-900">PETER KAWIJAYA</h4>
+                        <p class="text-indigo-700 font-medium text-xs mt-1">General Manager MDD</p>
+                        <div class="w-10 h-0.5 bg-indigo-100 mx-auto my-3 rounded-full"></div>
+                        <p class="text-gray-500 text-xs leading-relaxed">"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat."</p>
+                    </div>
+                </div>
+
+                <!-- GENERAL OPERATION (KOSONG) -->
+                <div class="text-center p-7 rounded-2xl border-2 border-dashed border-gray-200 flex flex-col bg-gray-50 opacity-60">
+                    <div class="w-28 h-28 rounded-full mx-auto mb-5 bg-gray-100 flex items-center justify-center border-4 border-white">
+                        <i class="fas fa-user-plus text-3xl text-gray-300"></i>
+                    </div>
+                    <div class="flex-grow">
+                        <h4 class="font-semibold text-lg text-gray-400">SEGERA HADIR</h4>
+                        <p class="text-gray-400 font-medium text-xs mt-1">General Operation</p>
+                        <div class="w-10 h-0.5 bg-gray-200 mx-auto my-3 rounded-full"></div>
+                        <p class="text-gray-400 text-xs italic">"Posisi kosong / segera diisi"</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ==============================================
+         FOOTER SECTION (Konsisten)
+         ============================================== -->
+    <footer class="bg-[#1c1945] text-slate-300 pt-16 pb-8 px-6 border-t border-indigo-950">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-indigo-900/50">
+            <div class="lg:col-span-2 space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="bg-white p-1.5 rounded-lg shadow-sm">
+                        <img src="https://i.imgur.com/4gdks1j.png" class="h-6 w-auto" alt="Logo Mensa Binasukses">
+                    </div>
+                    <span class="font-bold text-white text-lg tracking-wide">PT Mensa Binasukses</span>
+                </div>
+                <p class="text-slate-300 text-sm leading-relaxed max-w-sm">
+                    Mitra terpercaya dalam distribusi kesehatan nasional. Berkomitmen menghadirkan kualitas terbaik bagi seluruh masyarakat Indonesia.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-white text-sm uppercase tracking-wider mb-4">Navigasi</h4>
+                <ul class="space-y-2.5 text-sm">
+                    <li><a href="index.html" class="hover:text-white transition">Beranda</a></li>
+                    <li><a href="tentang.html" class="hover:text-white transition">Tentang Kami</a></li>
+                    <li><a href="keunggulan.html" class="hover:text-white transition">Bisnis & Layanan</a></li>
+                    <li><a href="produk.html" class="hover:text-white transition">Produk</a></li>
+                    <li><a href="keunggulan.html#cabang" class="hover:text-white transition">Jaringan</a></li>
+                    <li><a href="kontak.html" class="hover:text-white transition">Kontak Kami</a></li>
+                </ul>
+            </div>
+
+            <div class="space-y-6">
+                <div>
+                    <h4 class="font-bold text-white text-sm uppercase tracking-wider mb-4">Divisi</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Farmasi</a></li>
+                        <li><a href="#" class="hover:text-white transition">Consumer Goods</a></li>
+                        <li><a href="#" class="hover:text-white transition">Medical Device</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white text-sm uppercase tracking-wider mb-4">Kontak Kami</h4>
+                    <ul class="space-y-2.5 text-xs text-slate-300">
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-map-marker-alt text-indigo-400 mt-0.5 shrink-0"></i>
+                            <span>Jl. Pulo Kambing II No. 26, Kawasan Industri Pulogadung, Jakarta 13260</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-envelope text-indigo-400 shrink-0"></i>
+                            <span>support@mbs.co.id</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-phone text-indigo-400 shrink-0"></i>
+                            <span>+62 21 460 1957</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-white text-sm uppercase tracking-wider mb-4">Ikuti Kami</h4>
+                <div class="flex items-center gap-3">
+                    <a href="#" class="w-10 h-10 rounded-xl bg-[#2b2668] border border-indigo-900/60 flex items-center justify-center text-white hover:bg-indigo-600 transition duration-300 shadow-sm">
+                        <i class="fab fa-linkedin-in text-sm"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-xl bg-[#2b2668] border border-indigo-900/60 flex items-center justify-center text-white hover:bg-indigo-600 transition duration-300 shadow-sm">
+                        <i class="fab fa-instagram text-sm"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-xl bg-[#2b2668] border border-indigo-900/60 flex items-center justify-center text-white hover:bg-indigo-600 transition duration-300 shadow-sm">
+                        <i class="fab fa-facebook-f text-sm"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-xl bg-[#2b2668] border border-indigo-900/60 flex items-center justify-center text-white hover:bg-indigo-600 transition duration-300 shadow-sm">
+                        <i class="fab fa-youtube text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto pt-8 text-center text-xs text-indigo-300/80">
+            <p>&copy; 2026 PT Mensa Binasukses. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Script AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: false,
+            offset: 50
+        });
+    </script>
+</body>
+</html>
