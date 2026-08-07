@@ -244,132 +244,185 @@
         </div>
 
         <!-- BAGIAN CABANG -->
-        <div id="cabang" class="py-16 px-6" data-aos="fade-up">
-            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <!-- Foto di Kiri (Landscape) -->
-                <div class="w-full">
-                    <img src="https://i.imgur.com/Ow1pSkZ.png" alt="Branch Office" class="w-full aspect-video rounded-3xl shadow-xl object-cover">
-                </div>
+<div id="cabang" class="py-16 px-6" data-aos="fade-up">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Foto di Kiri (Landscape) -->
+        <div class="w-full">
+            <img src="https://i.imgur.com/Ow1pSkZ.png" alt="Branch Office" class="w-full aspect-video rounded-3xl shadow-xl object-cover">
+        </div>
 
-                <!-- Keterangan di Kanan -->
-                <div>
-                    <h2 class="text-indigo-700 font-bold text-4xl mb-6">Cabang</h2>
-                    <div class="text-gray-600 leading-relaxed space-y-4 text-justify">
-                        <p>
-                            Dengan jaringan komprehensif yang terdiri dari 28 cabang dan pusat distribusi yang tersebar di seluruh Indonesia, 
-                            <strong>MBS</strong> menawarkan jangkauan dan aksesibilitas yang tak tertandingi bagi para pelanggan kami.
-                        </p>
-                        <p>
-                            Kehadiran strategis kami di pasar-pasar utama memungkinkan kami untuk menyediakan solusi distribusi yang efisien dan andal, 
-                            memastikan bahwa pelanggan kami dapat mengakses produk dan layanan kami dari mana saja di seluruh negeri.
-                        </p>
-                        <p>
-                            Jaringan kami yang luas memungkinkan kami untuk merespons permintaan pasar yang berubah dengan cepat, meningkatkan 
-                            pengalaman pelanggan, dan menekan biaya, menjadikan kami mitra utama bagi bisnis yang mencari solusi distribusi yang tepercaya dan efisien.
-                        </p>
+        <!-- Keterangan di Kanan -->
+        <div>
+            <h2 class="text-indigo-700 font-bold text-4xl mb-6">Cabang</h2>
+            <div class="text-gray-600 leading-relaxed space-y-4 text-justify">
+                <p>
+                    Dengan jaringan komprehensif yang terdiri dari 28 cabang dan pusat distribusi yang tersebar di seluruh Indonesia, 
+                    <strong>MBS</strong> menawarkan jangkauan dan aksesibilitas yang tak tertandingi bagi para pelanggan kami.
+                </p>
+                <p>
+                    Kehadiran strategis kami di pasar-pasar utama memungkinkan kami untuk menyediakan solusi distribusi yang efisien dan andal, 
+                    memastikan bahwa pelanggan kami dapat mengakses produk dan layanan kami dari mana saja di seluruh negeri.
+                </p>
+                <p>
+                    Jaringan kami yang luas memungkinkan kami untuk merespons permintaan pasar yang berubah dengan cepat, meningkatkan 
+                    pengalaman pelanggan, dan menekan biaya, menjadikan kami mitra utama bagi bisnis yang mencari solusi distribusi yang tepercaya dan efisien.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Section Peta & List Cabang dengan Alamat Lengkap -->
+<div class="py-16 px-6 max-w-7xl mx-auto" x-data="cabangApp()">
+    <!-- Peta -->
+    <div class="mb-10">
+        <div id="map" class="w-full h-[450px] rounded-3xl shadow-lg z-10"></div>
+    </div>
+
+    <!-- Tombol Tab (Region) -->
+    <div class="flex flex-wrap justify-center gap-2 mb-8">
+        <template x-for="(data, region) in databaseCabang" :key="region">
+            <button 
+                @click="pilihRegion(region)" 
+                :class="activeTab === region ? 'bg-indigo-700 text-white shadow-lg' : 'bg-white text-gray-700 border border-gray-200 hover:bg-indigo-50'"
+                class="py-3 px-6 rounded-2xl font-semibold transition text-sm flex items-center gap-2">
+                <i class="fas fa-home"></i> 
+                <span x-text="region"></span>
+            </button>
+        </template>
+    </div>
+
+    <!-- Card Konten (Alamat Lengkap & Interaktif) -->
+    <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-xl max-w-4xl mx-auto">
+        <h3 class="text-2xl font-bold text-indigo-700 mb-6 border-b pb-4 flex justify-between items-center">
+            <span x-text="'Cabang Wilayah ' + activeTab"></span>
+            <span class="text-xs font-normal bg-indigo-50 text-indigo-600 px-3 py-1 rounded-full" x-text="databaseCabang[activeTab].length + ' lokasi'"></span>
+        </h3>
+        
+        <!-- List Cabang dengan Alamat -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+            <template x-for="cabang in databaseCabang[activeTab]" :key="cabang.nama">
+                <div @click="fokusKeLokasi(cabang.lat, cabang.lng, cabang.nama, cabang.alamat)" 
+                     class="cursor-pointer p-4 rounded-2xl border border-gray-100 hover:border-indigo-200 hover:bg-indigo-50/40 transition flex items-start gap-3 group">
+                    <span class="text-indigo-600 mt-1 text-lg group-hover:scale-110 transition"><i class="fas fa-map-marker-alt"></i></span>
+                    <div>
+                        <h4 class="font-bold text-gray-900 text-sm group-hover:text-indigo-700 transition" x-text="cabang.nama"></h4>
+                        <p class="text-xs text-gray-500 mt-1 leading-relaxed" x-text="cabang.alamat"></p>
                     </div>
                 </div>
-            </div>
+            </template>
         </div>
-        
-        <!-- Section Peta & List Cabang -->
-        <div class="py-16 px-6 max-w-7xl mx-auto" x-data="{ activeTab: 'Jawa' }">
-            <!-- Peta -->
-            <div class="mb-10">
-                <div id="map" class="w-full h-[450px] rounded-3xl shadow-lg z-10"></div>
-            </div>
+    </div>
+</div>
 
-            <!-- Tombol Tab (Region) -->
-            <div class="flex flex-wrap justify-center gap-2 mb-8">
-                <template x-for="region in ['Bali', 'Banten', 'DKI Jakarta', 'Jawa', 'Kalimantan', 'Riau', 'Sulawesi', 'Sumatera']">
-                    <button 
-                        @click="activeTab = region" 
-                        :class="activeTab === region ? 'bg-indigo-700 text-white shadow-lg' : 'bg-white text-gray-700 border border-gray-200 hover:bg-indigo-50'"
-                        class="py-3 px-6 rounded-2xl font-semibold transition text-sm flex items-center gap-2">
-                        <i class="fas fa-home"></i> 
-                        <span x-text="region"></span>
-                    </button>
-                </template>
-            </div>
+<!-- Script untuk Data, Peta, & Interaksi Alpine.js -->
+<script>
+    // Database lengkap dengan Koordinat Lat/Lng untuk Peta & Alamat Detail
+    const databaseCabang = {
+        "Sumatera": [
+            { nama: "B. Lampung", alamat: "Jl. Tembesu No. 8A/31, Campang Raya, Sukabumi, Bandar Lampung", lat: -5.4293, lng: 105.2977 },
+            { nama: "Banda Aceh", alamat: "Jl. Soekarno Hatta, Desa Mibo, Kec. Banda Raya, Kota Banda Aceh", lat: 5.5483, lng: 95.3238 },
+            { nama: "Batam", alamat: "Kompleks Century Blok A No 3, Teluk Tering, Batam Centre, Kota Batam", lat: 1.1301, lng: 104.0531 },
+            { nama: "Jambi", alamat: "Jl. Berdikari No. 03 RT 26 Kel. Payo Selincah, Kec. Paal Merah, Jambi", lat: -1.6101, lng: 103.6131 },
+            { nama: "Medan", alamat: "Jl. Tempua No. 36 Kel Seikambing B, Kec Medan Sunggal, Medan", lat: 3.5952, lng: 98.6556 },
+            { nama: "Padang", alamat: "Jl. Raya By Pass KM. 9 Taratak Paneh, Kel. Korong Gadang, Kec. Kuranji, Padang", lat: -0.9231, lng: 100.3888 },
+            { nama: "Palembang", alamat: "Jl. Sungai Sedapat No. 10 RT 41/RW 08 Kel. Sukajaya, Kec. Sukarami, Palembang", lat: -2.9331, lng: 104.7071 },
+            { nama: "Pekanbaru", alamat: "Jln. Arengka II Kompleks Pergudangan Angkasa Blok C No.1", lat: 0.4912, lng: 101.4278 }
+        ],
+        "Jabodetabek": [
+            { nama: "Bekasi", alamat: "Jl. Siliwangi No. 31 RT 004/003 Sepanjang Jaya, Rawa Lumbu, Bekasi", lat: -6.2625, lng: 106.9932 },
+            { nama: "Bogor", alamat: "Jl. Parung Banteng No.26 RT 002 RW 001 Kel. Katulampa, Kec. Bogor Timur, Kota Bogor", lat: -6.6111, lng: 106.8299 },
+            { nama: "Head Office MBS / JAK 1", alamat: "Jl Pulo Kambing II No 26, Kawasan Industri Pulogadung, Jatinegara, Cakung", lat: -6.1952, lng: 106.9118 },
+            { nama: "Depok (JKT 3)", alamat: "Jl. Menpor No. 9 RT 010/003 Palsigunung Kel. Tugu, Kec. Cimanggis, Depok", lat: -6.3531, lng: 106.8552 },
+            { nama: "Tangerang", alamat: "Jl. Sinar Hati No. 88 RT 004/02 Kel. Sukajadi, Kec. Karawaci, Tangerang", lat: -6.1783, lng: 106.6212 }
+        ],
+        "Jawa": [
+            { nama: "Bandung", alamat: "Jl. Soekarno Hatta 785 A, Kel. Babakan Penghulu, Kec. Cinambo, Bandung", lat: -6.9321, lng: 107.7021 },
+            { nama: "Cirebon", alamat: "Jln. Buyut No. 28 D Kutasirap Pegambiran, Cirebon", lat: -6.7321, lng: 108.5521 },
+            { nama: "Jember", alamat: "Jl. K.I.L Shiddiq No. 110 Kel. Jember Kidul, Kec. Kaliwates, Jember", lat: -8.1721, lng: 113.6921 },
+            { nama: "Malang", alamat: "Jl. Pandanlandung no 47, Kec. Wagir, Kab. Malang", lat: -8.0121, lng: 112.5921 },
+            { nama: "Purwokerto", alamat: "Jl. Suparjo Rustam RT. 01 RW. 007 Kel. Sokaraja Tengah, Kec. Sokaraja, Banyumas", lat: -7.4521, lng: 109.2821 },
+            { nama: "Semarang", alamat: "Kawasan Industri Candi Blok 20 A No. 6, Semarang", lat: -6.9821, lng: 110.4121 },
+            { nama: "Solo", alamat: "Jl. Sidoluhur No. 118 Cemani, Kec. Grogol, Kab. Sukoharjo 57552", lat: -7.5721, lng: 110.8121 },
+            { nama: "Surabaya", alamat: "Kompleks Pergudangan Nila Alam, Jl. Raya Waru No.1A Gudang No. 5, Waru, Sidoarjo", lat: -7.3521, lng: 112.7221 },
+            { nama: "Yogyakarta", alamat: "Jl. Tritunggal no. 2A, Jotawang, Bangunharjo, Bantul, DIY 55162", lat: -7.8321, lng: 110.3621 }
+        ],
+        "Bali": [
+            { nama: "Denpasar", alamat: "Jl. Gunung Agung No. 161, Denpasar 80118", lat: -8.6521, lng: 115.2121 }
+        ],
+        "Kalimantan": [
+            { nama: "Banjarmasin", alamat: "Jl. A. Yani KM 13.300 RT 008/003 Kel. Gambut Barat, Kec. Gambut, Kab Banjar", lat: -3.3121, lng: 114.5921 },
+            { nama: "Pontianak", alamat: "Jl. Arteri Supadio Ahmad Yani II No.100, Kel Arang Limbung, Kec Sungai Raya", lat: -0.1521, lng: 109.3421 },
+            { nama: "Samarinda", alamat: "Kompleks Pergudangan Tahap 1 Blok C, Jl. Teuku Umar, Kel. Karang Asam Ulu, Samarinda", lat: -0.5021, lng: 117.1521 }
+        ],
+        "Sulawesi": [
+            { nama: "Makassar", alamat: "Jl. Kima 8 Kav SS-19, Kawasan Industri Makassar, Kota Makassar 90242", lat: -5.1121, lng: 119.5121 },
+            { nama: "Manado", alamat: "Jl. Tiram No.9 Kairagi, Kompleks Pergudangan Raya Manado-Bitung, Kel. Kairagi 1, Kota Manado", lat: 1.4821, lng: 124.8421 }
+        ],
+        "Riau": [
+            { nama: "Pekanbaru", alamat: "Jln. Arengka II Kompleks Pergudangan Angkasa Blok C No.1", lat: 0.4912, lng: 101.4278 },
+            { nama: "Batam", alamat: "Kompleks Century Blok A No 3, Teluk Tering, Batam Centre, Kota Batam", lat: 1.1301, lng: 104.0531 }
+        ],
+        "DKI Jakarta": [
+            { nama: "Jakarta Timur (Head Office)", alamat: "Jl Pulo Kambing II No 26, Kawasan Industri Pulogadung, Jatinegara, Cakung", lat: -6.1952, lng: 106.9118 }
+        ]
+    };
 
-            <!-- Card Konten (Muncul berdasarkan klik) -->
-            <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-xl max-w-3xl mx-auto">
-                <h3 class="text-2xl font-bold text-indigo-700 mb-6 border-b pb-4" x-text="'Cabang Wilayah ' + activeTab"></h3>
+    function cabangApp() {
+        return {
+            activeTab: 'Sumatera',
+            mapInstance: null,
+            markersGroup: null,
+
+            init() {
+                // Inisialisasi Peta Leaflet
+                this.mapInstance = L.map('map').setView([-2.548926, 118.014863], 5);
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 18,
+                    minZoom: 4,
+                    attribution: '&copy; OpenStreetMap contributors'
+                }).addTo(this.mapInstance);
+
+                this.markersGroup = L.layerGroup().addTo(this.mapInstance);
+                this.muatMarkerRegion(this.activeTab);
+            },
+
+            pilihRegion(region) {
+                this.activeTab = region;
+                this.muatMarkerRegion(region);
+            },
+
+            muatMarkerRegion(region) {
+                this.markersGroup.clearLayers();
+                const listCabang = databaseCabang[region];
+                if (!listCabang || listCabang.length === 0) return;
+
+                let bounds = [];
+                listCabang.forEach(c => {
+                    let marker = L.marker([c.lat, c.lng]).bindPopup(`<b>${c.nama}</b><br><span style="font-size: 11px;">${c.alamat}</span>`);
+                    this.markersGroup.addLayer(marker);
+                    bounds.push([c.lat, c.lng]);
+                });
+
+                if (bounds.length > 0) {
+                    this.mapInstance.fitBounds(bounds, { padding: [50, 50], maxZoom: 12 });
+                }
+            },
+
+            fokusKeLokasi(lat, lng, nama, alamat) {
+                this.mapInstance.flyTo([lat, lng], 14, { duration: 1.5 });
                 
-                <!-- List Cabang -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
-                    <!-- Data untuk Bali -->
-                    <ul x-show="activeTab === 'Bali'" x-cloak class="space-y-2 text-gray-600">
-                        <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Denpasar</li>
-                    </ul>
-
-                    <!-- Data untuk Banten -->
-                    <ul x-show="activeTab === 'Banten'" x-cloak class="space-y-2 text-gray-600">
-                        <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Tangerang</li>
-                    </ul>
-
-                    <!-- Data untuk DKI Jakarta -->
-                    <ul x-show="activeTab === 'DKI Jakarta'" x-cloak class="space-y-2 text-gray-600">
-                        <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Jakarta Timur</li>
-                    </ul>
-                
-                    <!-- Data untuk Jawa -->
-                    <ul x-show="activeTab === 'Jawa'" x-cloak class="space-y-2 text-gray-600">
-                        <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Bekasi</li>
-                        <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Bogor</li>
-                        <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Bandung</li>
-                        <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Depok</li>
-                        <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Cirebon</li>
-                        <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Jember</li>
-                        <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Purwokerto</li>
-                        <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Malang</li>
-                        <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Surabaya</li>
-                        <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Solo</li>
-                        <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Semarang</li>
-                        <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Yogyakarta</li>
-                    </ul>
-                
-                    <!-- Data Untuk Kalimantan -->
-                    <ul x-show="activeTab === 'Kalimantan'" x-cloak class="space-y-2 text-gray-600">
-                        <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Banjarmasin</li>
-                        <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Pontianak</li>
-                        <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Samarinda</li>
-                    </ul>
-
-                    <!-- Data Untuk Riau -->
-                    <ul x-show="activeTab === 'Riau'" x-cloak class="space-y-2 text-gray-600">
-                        <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Pekanbaru</li>
-                        <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Batam</li>
-                    </ul>
-
-                    <!-- Data Untuk Sulawesi -->
-                    <ul x-show="activeTab === 'Sulawesi'" x-cloak class="space-y-2 text-gray-600">
-                        <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Makassar</li>
-                        <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Manado</li>
-                    </ul>
-
-                    <!-- Data untuk Sumatera -->
-                    <ul x-show="activeTab === 'Sumatera'" x-cloak class="space-y-2 text-gray-600">
-                        <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Bandar Lampung</li>
-                        <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Palembang</li>
-                        <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Padang</li>
-                        <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Jambi</li>
-                        <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Medan</li>
-                        <li><i class="fas fa-map-marker-alt text-indigo-400 mr-2"></i> Aceh</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Script untuk Menjalankan Peta Interaktif -->
-        <script>
-            var map = L.map('map').setView([-2.548926, 118.014863], 5);
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                maxZoom: 18,
-                minZoom: 4,
-                attribution: '&copy; OpenStreetMap contributors'
-            }).addTo(map);
-        </script>
+                // Cari dan buka popup marker yang sesuai
+                this.markersGroup.eachLayer(layer => {
+                    let pos = layer.getLatLng();
+                    if (pos.lat === lat && pos.lng === lng) {
+                        layer.openPopup();
+                    }
+                });
+            }
+        }
+    }
+</script>
             
     <!-- SECTION: SCM & WAREHOUSE (DENGAN STATISTIK KEPERCAYAAN PENGGANTI KOTAK BIRU) -->
         <section id="scm" class="bg-gradient-to-b from-white to-slate-100 py-24 px-6 border-t border-slate-200/60 relative overflow-hidden" data-aos="fade-up">
